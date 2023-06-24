@@ -22,14 +22,10 @@ const ArticlePage = ({
 
   const slug = slugify(title).toLowerCase();
 
-  // const ogImage = `https://www.phung.io/api/og-image?title=${encodeURIComponent(
+  // const ogImage = `${siteData.websiteUrl}/api/og-image?title=${encodeURIComponent(
   //   title
   // )}&date=${encodeURIComponent(publishedOn)}`;
-
-  const ogImage = `${siteData.websiteUrl}/api/og-image?title=${encodeURIComponent(
-    title
-  )}&date=${encodeURIComponent(publishedOn)}`;
-
+  const ogImage = `https://mushfiqweb.com/wp-content/uploads/2022/10/cover-bg.jpg`;
   return (
     <>
       <Layout
@@ -55,7 +51,11 @@ const ArticlePage = ({
           </div>
 
           <div className="max-w-5xl px-6 mx-auto my-16 md:px-8">
-            <img className="object-cover w-full rounded-xl aspect-video" src={coverImage} />
+            <Image
+              alt={title}
+              className="object-cover w-full rounded-xl aspect-video"
+              src={coverImage}
+            />
           </div>
           <div className="max-w-4xl px-6 mx-auto mb-24 space-y-8 md:px-8">
             {content.map(block => (
