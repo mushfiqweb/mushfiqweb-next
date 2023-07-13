@@ -1,21 +1,32 @@
-import type { AppProps } from 'next/app';
-import Script from 'next/script';
-import { Toaster } from 'react-hot-toast';
-import 'styles/globals.css';
+import "@/css/tailwind.css";
+import "@/css/prism.css";
+import "@/css/font.css";
+import { ThemeProvider } from "next-themes";
+import Head from "next/head";
+import LayoutWrapper from "@/components/LayoutWrapper";
 
-export default function App({ Component, pageProps }: AppProps) {
+import type { AppProps } from "next/app";
+
+function MyApp({ Component, pageProps }: AppProps) {
+  const { ...rest } = pageProps;
+
   return (
     <>
-      {process.env.NEXT_PUBLIC_UMAMI_ID &&
-        process.env.NEXT_PUBLIC_UMAMI_URL &&
-        process.env.NODE_ENV === 'production' && (
-          <Script
-            data-website-id={process.env.NEXT_PUBLIC_UMAMI_ID}
-            src={process.env.NEXT_PUBLIC_UMAMI_URL}
-          />
-        )}
-      <Toaster />
-      <Component {...pageProps} />;
+      <ThemeProvider attribute="class">
+        
+          <Head>
+            <meta
+              name="viewport"
+              content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, viewport-fit=cover"
+            />
+          </Head>
+          <LayoutWrapper>
+            <Component {...rest} />
+          </LayoutWrapper>
+   
+      </ThemeProvider>
     </>
   );
 }
+
+export default MyApp;
