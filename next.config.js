@@ -8,6 +8,7 @@ const { withSentryConfig } = require("@sentry/nextjs");
 
 const SentryWebpackPluginOptions = {
   silent: true,
+  authToken: process.env.SENTRY_AUTH_TOKEN,
 };
 
 const isDevelopment = process.env.NODE_ENV === "development";
