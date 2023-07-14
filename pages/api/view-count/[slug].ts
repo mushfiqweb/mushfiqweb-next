@@ -7,6 +7,7 @@ export default async function handler(
 ) {
   const slug = req.query.slug?.toString();
   try {
+    console.log("HIT");
     if (slug) {
       if (req.method === "POST") {
         const newOrUpdatedViews = await prisma.view.upsert({

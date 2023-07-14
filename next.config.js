@@ -42,6 +42,7 @@ const nextConfig = {
       "avatars.githubusercontent.com",
       // line avatar
       "profile.line-scdn.net",
+      "mushfiqweb.com",
     ],
   },
   pwa: {

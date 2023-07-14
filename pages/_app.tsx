@@ -7,23 +7,21 @@ import LayoutWrapper from "@/components/LayoutWrapper";
 
 import type { AppProps } from "next/app";
 
-function MyApp({ Component, pageProps }: AppProps) {
+function MyApp({ Component, pageProps }: AppProps<{ session: Session }>) {
   const { ...rest } = pageProps;
 
   return (
     <>
       <ThemeProvider attribute="class">
-        
-          <Head>
-            <meta
-              name="viewport"
-              content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, viewport-fit=cover"
-            />
-          </Head>
-          <LayoutWrapper>
-            <Component {...rest} />
-          </LayoutWrapper>
-   
+        <Head>
+          <meta
+            name="viewport"
+            content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, viewport-fit=cover"
+          />
+        </Head>
+        <LayoutWrapper>
+          <Component {...rest} />
+        </LayoutWrapper>
       </ThemeProvider>
     </>
   );

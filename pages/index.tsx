@@ -50,12 +50,12 @@ export default function Home({
         Latest blog posts
       </h2>
       {recentPosts.length === 0 ? (
-        <p className="pt-8 text-lg leading-7 text-gray-500 dark:text-gray-400 prose dark:prose-dark xl:text-xl">
+        <p className="pt-8 text-lg leading-7 prose text-gray-500 dark:text-gray-400 dark:prose-dark xl:text-xl">
           No recent posts.
         </p>
       ) : (
         <>
-          <div className="py-8 grid grid-cols-1 grid-rows-2 grid-flow-row sm:grid-rows-1 sm:grid-cols-2 justify-between gap-4">
+          <div className="grid justify-between grid-flow-row grid-cols-1 grid-rows-2 gap-4 py-8 sm:grid-rows-1 sm:grid-cols-2">
             {recentPosts.map((frontMatter) => {
               const { slug, title, viewCount } = frontMatter;
               return (
@@ -63,7 +63,7 @@ export default function Home({
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
-                    className="h-6 w-6 inline-block fill-current"
+                    className="inline-block w-6 h-6 fill-current"
                   >
                     <g data-name="Layer 2">
                       <g data-name="eye">
@@ -80,7 +80,7 @@ export default function Home({
           </div>
         </>
       )}
-      <div className="text-base font-medium leading-6 mb-8">
+      <div className="mb-8 text-base font-medium leading-6">
         <CustomLink
           href="/blog"
           className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
@@ -90,15 +90,13 @@ export default function Home({
           All Posts &rarr;
         </CustomLink>
       </div>
-      <h2 className="text-xl font-extrabold leading-5 tracking-tight text-gray-900 dark:text-gray-100 sm:text-2xl sm:leading-7 md:text-3xl md:leading-9">
-        Showcase
-      </h2>
-      <div className="py-8 grid grid-cols-1 grid-rows-2 grid-flow-row sm:grid-rows-1 sm:grid-cols-2 xl:grid-cols-2 justify-between gap-4">
-        <InternalCard href="/endorsements" title="Endorsements">
+
+      <div className="grid justify-between grid-flow-row grid-cols-1 grid-rows-2 gap-4 py-8 sm:grid-rows-1 sm:grid-cols-2 xl:grid-cols-2">
+        {/* <InternalCard href="/endorsements" title="Endorsements">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
-            className="h-6 w-6 inline-block fill-current"
+            className="inline-block w-6 h-6 fill-current"
           >
             <g data-name="Layer 2">
               <g data-name="award">
@@ -111,7 +109,7 @@ export default function Home({
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
-            className="h-6 w-6 inline-block fill-current"
+            className="inline-block w-6 h-6 fill-current"
           >
             <g data-name="Layer 2">
               <g data-name="book-open">
@@ -121,12 +119,12 @@ export default function Home({
             </g>
           </svg>
           {guestbookEntryCount} entries
-        </InternalCard>
-        <InternalCard href="/projects" title="Projects">
+        </InternalCard> */}
+        {/* <InternalCard href="/projects" title="Projects">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
-            className="h-6 w-6 inline-block fill-current"
+            className="inline-block w-6 h-6 fill-current"
           >
             <g data-name="Layer 2">
               <g data-name="cube">
@@ -136,7 +134,7 @@ export default function Home({
             </g>
           </svg>
           {projectCount} projects
-        </InternalCard>
+        </InternalCard> */}
       </div>
     </>
   );

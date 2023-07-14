@@ -40,13 +40,13 @@ export default function Hero() {
         </CustomLink>
         <div className="space-y-2 md:space-y-5">
           <PageTitle>
-            Xin chào! I'm Thắng{" "}
+            This is Mushfiq.{" "}
             <span role="img" aria-label="waving hand" className="wave">
               👋
             </span>
           </PageTitle>
           <p className="text-lg leading-7 prose text-gray-500 max-w-none dark:text-gray-400">
-            I am a full stack software engineer with a strong focus in front-end and system design.{" "}
+            Full Stack Developer, Tech Geek, Audiophile, Cinephile, and Lifelong Learner! <br />
             <Link
               href={`mailto:${siteMetadata.email}`}
               className="font-medium leading-6 "
