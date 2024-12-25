@@ -3,6 +3,8 @@ import 'css/twemoji.css'
 import 'react-medium-image-zoom/dist/styles.css'
 import 'remark-github-blockquote-alert/alert.css'
 
+import { Analytics } from '@vercel/analytics/next'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 import clsx from 'clsx'
 import type { Metadata } from 'next'
 import { JetBrains_Mono, Nunito, Playpen_Sans } from 'next/font/google'
@@ -132,6 +134,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </KBarSearchProvider>
           <Footer />
         </ThemeProviders>
+        <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   )
