@@ -1,81 +1,53 @@
-![A preview of my revamped blogfolio](https://nextjs-notion-blog-starter.vercel.app/preview/1.jpg)
+<h1 align="center">mushfiqweb.com 🧑‍💻</h1>
 
-# Nextjs Notion Blog Starter
-- [Default demo](https://nextjs-notion-blog-starter.vercel.app/) - Deployed from `main` branch
-- [Blog setup](https://nextjs-notion-blog-starter.vercel.app/blog/deploy-your-notion-blog-powered-by-nextjs-and-tailwind) - I wrote an article on how to use this starter to start your blog
+<div align="center">
 
+[![Made in Vietnam](https://raw.githubusercontent.com/webuild-community/badge/master/svg/made-modern.svg)](https://mushfiqweb.com)
 
-## ✨ Features
-- ✅ Setup takes only a few minutes ([single file config](https://github.com/tuanphungcz/nextjs-notion-blog-starter/blob/main/data/siteData.ts)) 💪
-- ✅ Newsletter subscription via [Convertkit API](https://github.com/tuanphungcz/nextjs-notion-blog-starter/blob/main/pages/api/subscribe-convertkit.tsx) 
-- ✅ Simple analytics with [Umami](https://github.com/umami-software/umami)
+</div>
 
-- ✅ Automatic OG social images with [Tailwind template](https://github.com/tuanphungcz/nextjs-notion-blog-starter/blob/main/components/OgTemplate.tsx)
-- ✅ Automatic pretty URLs
-- ✅ Excellent page speed
-- ✅ Optimized for Next.js and Vercel
-## 🛠 Build with
+![mushfiqweb.com @ #250a4c5 on Oct.13](https://cdn.shopify.com/s/files/1/0669/0262/2504/files/pawelzmarlak-2024-10-12T14_51_02.315Z.png?v=1728744886)
 
-- **Framework**: [Next.js](https://nextjs.org/), [Typescript](https://www.typescriptlang.org/)
-- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
-- **Content**: [Notion API](https://developers.notion.com)
-- **Newsletter**: [Convertkit](https://convertkit.com/)
-- **Deployment**: [Vercel](https://vercel.com)
+## Motivation
 
-## 📕 Project Overview
+> Sharing is learning!
 
-- `layouts/*` - The different layouts used on each page.
-- `components/*` - Components used throughout the site.
-- `components/notionBlocks/*` - Custom blocks made for Notion rendering.
-- `utils/*` - Short for "utilities", a collection of helpful utilities or code for external services.
-- `pages/api/*` - [API routes](https://nextjs.org/docs/api-routes/introduction) powering [`/og-image`](https://github.com/neg4n/next-api-og-image) dynamic OG image and [`/subscribe-convertkit`](https://github.com/tuanphungcz/nextjs-notion-blog-starter/blob/main/pages/api/subscribe-convertkit.tsx) newsletter subscription.
-- `pages/blog/*` - Static pre-rendered blog pages that fetch information from the Notion API.
-- `pages/*` - All other static pages.
-- `public/*` - Static assets including images, fonts, and videos.
-- `styles/*` - global styles and Tailwind.
-- `data/*` - a simple file containing global data about the site.
+I started this blog as a way to document and share stuff I have learned and found useful as a software engineer.
 
-## 🏃‍♂️ Running Locally
+Building and writing things down is a great way for me to solidify my understanding of new concepts and ideas. I hope my blog could be a helpful resource for fellow devs who interested in web dev, eCommerce, and related technologies.
 
-```bash
-git clone https://github.com/tuanphungcz/nextjs-notion-blog-starter
-cd nextjs-notion-blog-starter
-npm install
-npm run dev
-```
+I would be highly appreciated if you could leave your comments and thoughts on what I have written 🍻
 
+## Tech stack
 
-Create a `.env` file similar to `.env.example` and include the appropriate keys.
+This blog is hosted on [Vercel](https://vercel.com/), built with [Next.js](https://nextjs.org/) and [Tailwind CSS](https://tailwindcss.com/) using **Tailwind Nextjs Starter Blog**.
 
+A huge thanks to [Timothy Lin](https://twitter.com/timlrxx) for the minimal, lightweight, and super easy-to-customize blog starter.
 
-## 🚀 Deploy to vercel
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Ftuanphungcz%2Fnextjs-notion-blog-starter&env=NOTION_SECRET,DATABASE_ID&envDescription=Notion%20secret%20API%20key%20&envLink=https%3A%2F%2Fnextjs-notion-blog-starter.vercel.app%2Fblog%2Fdeploy-your-notion-blog-powered-by-nextjs-and-tailwind&project-name=my-notion-blog&repo-name=my-notion-blog)
+A few major over-engineering-changes from the original repo:
 
-```
-NOTION_SECRET=
-BLOG_DATABASE_ID=
+- ⚛️ **React 18+**, **NextJS 14+** (App Router)
+- 🎉 Adopting **Typescript**, committing with [Conventional Commits](https://www.conventionalcommits.org/)
+- 📊 Monitoring site with [Umami](https://umami.is/) website analytics
+- 👀 Theming in dark mode with [Github dark dimmed](https://github.blog/changelog/2021-04-14-dark-and-dimmed-themes-are-now-generally-available/) colors for better contrast
+- 👨‍💻 Making a lot of changes to the UI, new homepage design, adding `ProfileCard`, `CareerTimeline` components, adding `/snippets`, `/books` page, etc.
 
-# ConvertKit is optional
-NEXT_PUBLIC_CONVERTKIT_FORM_ID=
-NEXT_PUBLIC_CONVERTKIT_API_KEY=
+## Assets
 
-# Umami is optional
-NEXT_PUBLIC_UMAMI_ID=
-NEXT_PUBLIC_UMAMI_URL=
-```
+The images in this blog are from [Unsplash](https://unsplash.com/), gifs from [GIPHY](https://giphy.com/), and illustrations are from [Storyset](https://storyset.com/).
 
+Thanks for the free resources 🙏
 
+## Star History
 
-## 💁‍♀️ How to use
-- [Blog setup](https://nextjs-notion-blog-starter.vercel.app/blog/deploy-your-notion-blog-powered-by-nextjs-and-tailwind) - I wrote an article on how to use this starter to start your blog
+<a href="https://star-history.com/#mushfiqweb/mushfiqweb-next&Date">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=mushfiqweb/mushfiqweb-next&type=Date&theme=dark" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=mushfiqweb/mushfiqweb-next&type=Date" />
+   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=mushfiqweb/mushfiqweb-next&type=Date" />
+ </picture>
+</a>
 
+---
 
-
-## 📝 Credit & inspiration 
-This blog starter was inspired by all of these awesome open-sources
-
-- [samuelkraft-next](https://github.com/samuelkraft/samuelkraft-next) by [@samuelkraft](https://github.com/samuelkraft)
-- [leerob.io](https://github.com/leerob/leerob.io) by [@leerob](https://github.com/leerob)
-- [Next.js Notion Starter Kit](https://github.com/transitive-bullshit/nextjs-notion-starter-kit) by [@transitive-bullshit](https://github.com/transitive-bullshit)
-- [braydoncoyer.dev](https://github.com/braydoncoyer/braydoncoyer.dev) by [@braydoncoyer](https://github.com/braydoncoyer/braydoncoyer)
-
+Copyright (c) 2024 - Leo's dev blog – stories, insights, and ideas.

@@ -1,5 +1,8 @@
 {
-  "github": {
-    "silent": true
-  }
+  "rewrites": [
+    {
+      "source": "/stats/:match*",
+      "destination": "https://analytics.mushfiqweb.com/:match*"
+    }
+  ]
 }
