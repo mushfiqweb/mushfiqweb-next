@@ -7,7 +7,8 @@ import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import clsx from 'clsx'
 import type { Metadata } from 'next'
-import { JetBrains_Mono, Nunito, Playpen_Sans } from 'next/font/google'
+import { JetBrains_Mono, Josefin_Sans, Playpen_Sans, Titillium_Web } from 'next/font/google'
+import localFont from 'next/font/local'
 import { UmamiAnalytics } from '~/components/analytics/umami'
 import { Footer } from '~/components/footer'
 import { Header } from '~/components/header'
@@ -16,6 +17,12 @@ import { TiltedGridBackground } from '~/components/ui/tilted-grid-background'
 import { SITE_METADATA } from '~/data/site-metadata'
 import { ThemeProviders } from './theme-providers'
 
+const FONT_HYPER = localFont({
+  src: '../public/static/fonts/HYPE-Strong.otf',
+  display: 'swap', // Optional: Adds a fallback while the font is loading
+  variable: '--font-hyper', // Optional: Use as a CSS variable
+})
+
 const FONT_PLAYPEN_SANS = Playpen_Sans({
   subsets: ['latin'],
   display: 'swap',
@@ -23,12 +30,20 @@ const FONT_PLAYPEN_SANS = Playpen_Sans({
   variable: '--font-playpen-sans',
 })
 
-const FONT_NUNITO = Nunito({
+const FONT_NUNITO = Titillium_Web({
   subsets: ['latin'],
   display: 'swap',
   style: ['normal', 'italic'],
-  weight: ['400', '500', '600', '700', '800'],
+  weight: ['400', '200', '600', '700', '400'],
   variable: '--font-nunito',
+})
+
+const FONT_JOSEFIN = Josefin_Sans({
+  subsets: ['latin'],
+  display: 'swap',
+  style: ['normal', 'italic'],
+  weight: ['400', '200', '600', '700', '400'],
+  variable: '--font-josefin',
 })
 
 const FONT_JETBRAINS_MONO = JetBrains_Mono({
@@ -89,7 +104,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         'scroll-smooth',
         FONT_NUNITO.variable,
         FONT_JETBRAINS_MONO.variable,
-        FONT_PLAYPEN_SANS.variable
+        FONT_PLAYPEN_SANS.variable,
+        FONT_HYPER.variable,
+        FONT_JOSEFIN.variable
       )}
       suppressHydrationWarning
     >
@@ -119,7 +136,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body
         className={clsx([
           'antialiased',
-          'relative min-h-screen pl-[calc(100vw-100%)]',
+          'relative min-h-screen',
+          // 'relative min-h-screen pl-[calc(100vw-100%)]',
           'flex flex-col',
           'bg-white text-neutral-900',
           'dark:bg-dark dark:text-gray-100',

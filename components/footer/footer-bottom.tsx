@@ -18,7 +18,7 @@ export function FooterBottom() {
         songEffect="underline"
         showCover
       />
-      <div className="flex items-center">
+      <div className="rounded-5 flex items-center">
         <Link href={SITE_METADATA.siteRepo}>
           <span>
             <MadeInBD />
