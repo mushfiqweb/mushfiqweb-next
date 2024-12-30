@@ -110,7 +110,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       )}
       suppressHydrationWarning
     >
+      <link
+        rel="icon"
+        type="image/x-icon"
+        href="https://mushfiqweb.com/static/favicons/favicon.ico"
+      />
+
       <link rel="apple-touch-icon" sizes="76x76" href={`${basePath}/static/favicons/favicon.ico`} />
+
       <link
         rel="icon"
         type="image/png"
