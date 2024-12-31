@@ -5,7 +5,7 @@ export const SITE_METADATA = {
   description:
     'A personal space on the cloud where I document my programming journey, sharing lessons, insights, and resources for fellow developers.',
   language: 'en-us',
-  theme: 'system', // system, dark or light
+  theme: 'dark', // system, dark or light
   siteUrl: 'https://www.mushfiqweb.com',
   siteRepo: 'https://github.com/mushfiqweb/mushfiqweb-next',
   siteLogo: `${process.env.BASE_PATH || ''}/static/images/logo.jpg`,
