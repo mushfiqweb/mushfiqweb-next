@@ -4,6 +4,7 @@ import { GrowingUnderline } from '~/components/ui/growing-underline'
 import { Link } from '~/components/ui/link'
 import type { CoreContent } from '~/types/data'
 import { formatDate } from '~/utils/misc'
+import { ViewsCounter } from './views-counter'
 
 export function PostCardListView({
   post,
@@ -25,6 +26,8 @@ export function PostCardListView({
                   <time dateTime={date}>{formatDate(date)}</time>
                   <span className="mx-2 text-gray-400">/</span>
                   <span>{Math.ceil(readingTime.minutes)} mins read</span>
+                  <span className="mx-2 text-gray-400">/</span>
+                  <ViewsCounter type={'blog'} slug={slug} />
                 </dd>
               </dl>
               <h2 className="pb-1 text-xl font-bold tracking-tight md:text-2xl">

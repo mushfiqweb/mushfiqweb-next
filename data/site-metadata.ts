@@ -5,6 +5,7 @@ export const SITE_METADATA = {
   description: `A personal blog a Software Developer, Software Engineer, Principal Engineer, React Developer, NodeJs Developer`,
   language: 'en-us',
   theme: 'dark', // system, dark or light
+  // siteUrl: 'localhost:3435',
   siteUrl: 'https://www.mushfiqweb.com',
   siteRepo: 'https://github.com/mushfiqweb/mushfiqweb-next',
   siteLogo: `${process.env.BASE_PATH || ''}/static/images/logo.jpg`,
@@ -17,6 +18,7 @@ export const SITE_METADATA = {
   linkedin: 'https://www.linkedin.com/in/mushfiqweb',
   threads: 'https://www.threads.net/mushfiqweb',
   instagram: 'https://www.instagram.com/mushfiqweb',
+  lastfm: 'https://www.last.fm/user/mushfiqweb',
   locale: 'en-US',
   stickyNav: true,
   goodreadsBookshelfUrl: 'https://www.goodreads.com/review/list/',
