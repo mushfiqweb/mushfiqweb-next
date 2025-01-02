@@ -1,16 +1,15 @@
 export const SITE_METADATA = {
-  title: `Mushfiqur's Blog`,
+  title: `Mushfiqur's blog – Full Stack Developer, Tech Geek, Audiophile, Cinephile, and Lifelong Learner!`,
   author: 'Mushfiqur Rahman Shishir',
   headerTitle: `Mushfiqur's blog – Full Stack Developer, Tech Geek, Audiophile, Cinephile, and Lifelong Learner!`,
-  description:
-    'A personal space on the cloud where I document my programming journey, sharing lessons, insights, and resources for fellow developers.',
+  description: `A personal blog a Software Developer, Software Engineer, Principal Engineer, React Developer, NodeJs Developer`,
   language: 'en-us',
   theme: 'dark', // system, dark or light
   siteUrl: 'https://www.mushfiqweb.com',
   siteRepo: 'https://github.com/mushfiqweb/mushfiqweb-next',
   siteLogo: `${process.env.BASE_PATH || ''}/static/images/logo.jpg`,
   socialBanner: `${process.env.BASE_PATH || ''}/static/images/twitter-card.jpeg`,
-  email: 'contact@mushfiqweb.com',
+  email: 'mushfiqweb@gmail.com',
   github: 'https://github.com/mushfiqweb',
   x: 'https://x.com/mushfiqweb',
   facebook: 'https://facebook.com/shiss',

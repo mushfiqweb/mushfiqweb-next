@@ -102,7 +102,7 @@ export function ListLayout({
       {!filteredBlogPosts.length ? (
         <div className="py-10">No posts found.</div>
       ) : (
-        <div className="grid grid-cols-1 gap-x-8 gap-y-16 py-10 md:gap-y-16 lg:grid-cols-2 xl:grid-cols-3">
+        <div className="grid grid-cols-1 gap-y-16 py-10 md:gap-y-16">
           {displayPosts.map((post) => (
             <PostCardGridView key={post.path} post={post} />
           ))}
