@@ -51,13 +51,12 @@ export function GrowingUnderline({
   duration?: number
   [key: string]: any
 }) {
+  console.log({
+    className,
+  })
   return (
     <Component
-      className={clsx([
-        'link link--metis w-full whitespace-normal',
-        active ? 'link--metis-hover' : '',
-        className,
-      ])}
+      className={clsx(['link link--metis w-full whitespace-normal', className])}
       style={{ '--duration': `${duration || 300}ms` } as CSSProperties}
       {...rest}
     >

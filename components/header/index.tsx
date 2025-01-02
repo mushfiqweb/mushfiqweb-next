@@ -47,19 +47,20 @@ export function Header() {
           <div className="flex items-center gap-4">
             <div className="hidden gap-1.5 sm:flex">
               {HEADER_NAV_LINKS.map(({ title, href }) => {
-                let isActive = pathname.startsWith(href)
+                let isActive = pathname === href || pathname.startsWith(href)
+                console.log({
+                  pathname,
+                  href,
+                  isActive,
+                })
                 return (
                   <Link key={title} href={href} className="px-3 py-1 font-medium">
-                    <GrowingUnderline
-                      className={clsx(isActive && 'bg-[length:100%_50%]')}
-                      data-umami-event={`nav-${href.replace('/', '')}`}
-                    >
+                    <GrowingUnderline className={clsx(isActive && 'link--metis-hover')}>
                       {title}
                     </GrowingUnderline>
                   </Link>
                 )
               })}
-              {/* <MoreLinks /> */}
             </div>
             <div
               data-orientation="vertical"

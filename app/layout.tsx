@@ -144,13 +144,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         className={clsx([
           'antialiased',
           'relative min-h-screen',
-          // 'relative min-h-screen pl-[calc(100vw-100%)]',
           'flex flex-col',
           'bg-white text-neutral-900',
           'dark:bg-dark dark:text-gray-100',
         ])}
       >
-        <TiltedGridBackground className="inset-x-0 top-0 z-[-1] h-[50vh]" />
+        <TiltedGridBackground className="inset-x-0 top-0 z-[-1] h-[70vh]" />
         <ThemeProviders>
           <UmamiAnalytics websiteId={SITE_METADATA.analytics.umamiAnalytics.websiteId} />
           <KBarSearchProvider configs={SITE_METADATA.search.kbarConfigs}>
