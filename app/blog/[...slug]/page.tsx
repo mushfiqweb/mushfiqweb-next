@@ -103,6 +103,34 @@ export default async function Page(props: { params: Promise<{ slug: string[] }> 
   })
   let Layout = LAYOUTS[post.layout || DEFAULT_LAYOUT]
 
+  // console.log('post', post);
+
+  // let [stats, isLoading] = useBlogStats('blog', slug)
+  //   let updateView = useUpdateBlogStats()
+
+  //   useEffect(() => {
+  //     if (!isLoading && stats) {
+
+  //       const lastViewed = localStorage.getItem(slug);
+  //       const now = new Date();
+  //       const twentyFourHoursAgo = new Date(now.getTime() - 24 * 60 * 60 * 1000);
+
+  //       if (lastViewed) {
+  //         const lastViewedDate = new Date(lastViewed);
+
+  //         // Check if last viewed time was within the last 24 hours
+  //         if (lastViewedDate > twentyFourHoursAgo) {
+  //           console.log("Viewed within 24 hours, skipping update.")
+  //           return; // Skip the view update
+  //         }
+  //       }
+
+  //       // Update localStorage
+  //       localStorage.setItem(slug, now.toISOString());
+  //       updateView({ type: 'blog', slug, views: stats['views'] + 1 })
+  //     }
+  //   }, [stats, isLoading])
+
   return (
     <>
       <script
