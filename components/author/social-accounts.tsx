@@ -1,5 +1,8 @@
 import { clsx } from 'clsx'
-import { Facebook, Github, InstagramIcon, Linkedin, PianoIcon } from 'lucide-react'
+import { InstagramIcon, Linkedin } from 'lucide-react'
+import { LuFacebook } from 'react-icons/lu'
+import { SiStackoverflow } from 'react-icons/si'
+import { TbBrandGithub, TbBrandLastfm } from 'react-icons/tb'
 import { SITE_METADATA } from '~/data/site-metadata'
 import X from '~/icons/x.svg'
 
@@ -14,7 +17,7 @@ export function SocialAccounts({ className }: { className?: string }) {
         title="GitHub"
       >
         <span className="sr-only">Github</span>
-        <Github strokeWidth={1.5} />
+        <TbBrandGithub fontSize={25} />
       </a>
       <a
         href={SITE_METADATA.x}
@@ -44,7 +47,7 @@ export function SocialAccounts({ className }: { className?: string }) {
         title="Facebook"
       >
         <span className="sr-only">Facebook</span>
-        <Facebook strokeWidth={1.5} />
+        <LuFacebook fontSize={25} />
       </a>
       <a
         href={SITE_METADATA.instagram}
@@ -64,7 +67,17 @@ export function SocialAccounts({ className }: { className?: string }) {
         title="LastFM"
       >
         <span className="sr-only">LastFM</span>
-        <PianoIcon strokeWidth={1.5} />
+        <TbBrandLastfm fontSize={23} />
+      </a>
+      <a
+        href={SITE_METADATA.stackoverflow}
+        target="_blank"
+        className="text-gray-900 hover:text-primary-500 dark:text-gray-100 dark:hover:text-primary-400"
+        rel="noopener noreferrer"
+        title="StackOverflow"
+      >
+        <span className="sr-only">StackOverflow</span>
+        <SiStackoverflow fontSize={23} />
       </a>
     </div>
   )
