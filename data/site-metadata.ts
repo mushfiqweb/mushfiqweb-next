@@ -19,6 +19,7 @@ export const SITE_METADATA = {
   threads: 'https://www.threads.net/mushfiqweb',
   instagram: 'https://www.instagram.com/mushfiqweb',
   lastfm: 'https://www.last.fm/user/mushfiqweb',
+  stackoverflow: 'https://stackoverflow.com/users/1421285/mushfiq',
   locale: 'en-US',
   stickyNav: true,
   goodreadsBookshelfUrl: 'https://www.goodreads.com/review/list/',
