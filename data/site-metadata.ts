@@ -9,7 +9,7 @@ export const SITE_METADATA = {
   siteUrl: 'https://www.mushfiqweb.com',
   siteRepo: 'https://github.com/mushfiqweb/mushfiqweb-next',
   siteLogo: `${process.env.BASE_PATH || ''}/static/images/logo.jpg`,
-  socialBanner: `${process.env.BASE_PATH || ''}/static/images/twitter-card.jpeg`,
+  socialBanner: `${process.env.BASE_PATH || ''}/static/images/mushfiqweb.gif`,
   email: 'mushfiqweb@gmail.com',
   github: 'https://github.com/mushfiqweb',
   x: 'https://x.com/mushfiqweb',
