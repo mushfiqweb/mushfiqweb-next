@@ -32,7 +32,7 @@ export function SocialAccounts({ className }: { className?: string }) {
       <a
         href={SITE_METADATA.linkedin}
         target="_blank"
-        className="text-gray-900 hover:text-primary-500 dark:text-gray-100 dark:hover:text-primary-400"
+        className="font-bold text-gray-900 transition-all hover:text-primary-500 dark:text-gray-100 dark:hover:text-gray-950"
         rel="noopener noreferrer"
         title="LinkedIn"
       >
