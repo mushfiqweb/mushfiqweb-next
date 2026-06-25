@@ -26,7 +26,7 @@ export function ProjectCard({ project }: { project: (typeof PROJECTS)[0] }) {
       <div className="mb-6 flex items-center gap-4">
         <Image src={imgSrc} alt={title} width={100} height={100} className="h-15 w-15 shrink-0" />
         <div className="flex flex-col items-start gap-1 pt-1">
-          <h2 className="text-[22px] font-bold leading-[30px]">
+          <h3 className="text-[22px] font-bold leading-[30px]">
             {href ? (
               <Link href={href} aria-label={`Link to ${title}`}>
                 <GrowingUnderline data-umami-event="project-title-link">{title}</GrowingUnderline>
@@ -34,7 +34,7 @@ export function ProjectCard({ project }: { project: (typeof PROJECTS)[0] }) {
             ) : (
               title
             )}
-          </h2>
+          </h3>
         </div>
       </div>
       <p className="mb-16 line-clamp-3 grow text-lg">{repository?.description || description}</p>

@@ -1,6 +1,6 @@
 import type { NextRequest } from 'next/server'
-import { getBlogStats, updateBlogStats } from '~/db/queries'
-import type { SelectStats, StatsType } from '~/db/schema'
+import { getBlogStats, updateBlogStats } from '~/utils/supabase'
+import type { SelectStats, StatsType } from '~/utils/supabase'
 
 export async function GET(request: NextRequest) {
   try {

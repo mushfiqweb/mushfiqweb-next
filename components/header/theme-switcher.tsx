@@ -41,22 +41,21 @@ export function ThemeSwitcher() {
   return (
     <div className="flex items-center">
       <Menu as="div" className="relative inline-block text-left">
-        <div
-          className="flex items-center justify-center rounded p-1.5 hover:bg-gray-200 dark:hover:bg-gray-700"
+        <MenuButton
+          aria-label="Theme switcher"
+          className="flex items-center justify-center rounded p-1.5 hover:bg-gray-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 dark:hover:bg-gray-700"
           data-umami-event="nav-theme-switcher"
         >
-          <MenuButton aria-label="Theme switcher">
-            {mounted ? (
-              resolvedTheme === 'dark' ? (
-                <MoonStar strokeWidth={1.5} size={22} />
-              ) : (
-                <Sun strokeWidth={1.5} size={22} />
-              )
+          {mounted ? (
+            resolvedTheme === 'dark' ? (
+              <MoonStar strokeWidth={1.5} size={22} />
             ) : (
-              <SunMoon strokeWidth={1.5} size={22} />
-            )}
-          </MenuButton>
-        </div>
+              <Sun strokeWidth={1.5} size={22} />
+            )
+          ) : (
+            <SunMoon strokeWidth={1.5} size={22} />
+          )}
+        </MenuButton>
         <Transition
           as={Fragment}
           enter="transition ease-out duration-100"

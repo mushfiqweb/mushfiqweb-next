@@ -46,11 +46,11 @@ export function MovieCard({ movie }: { movie: ImdbMovie }) {
           </Zoom>
         </div>
         <div className="relative flex grow flex-col gap-1 overflow-hidden pb-4 pr-2 pt-2 md:pr-4">
-          <div className="flex items-start justify-between gap-3 text-xl font-semibold md:text-2xl">
+          <h2 className="text-xl font-semibold md:text-2xl">
             <Link href={url}>
               <GrowingUnderline>{title}</GrowingUnderline>
             </Link>
-          </div>
+          </h2>
           <div className="grow">
             <div className="flex flex-wrap items-center gap-1 text-gray-500 dark:text-gray-400">
               <span>

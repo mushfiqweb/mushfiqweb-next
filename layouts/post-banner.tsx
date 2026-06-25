@@ -12,7 +12,7 @@ import { SocialShare } from '~/components/blog/social-share'
 import { TagsList } from '~/components/blog/tags'
 import { Container } from '~/components/ui/container'
 import { SITE_METADATA } from '~/data/site-metadata'
-import type { StatsType } from '~/db/schema'
+import type { StatsType } from '~/utils/supabase'
 import type { CoreContent } from '~/types/data'
 
 interface LayoutProps {

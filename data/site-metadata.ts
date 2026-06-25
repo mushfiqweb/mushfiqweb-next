@@ -2,7 +2,7 @@ export const SITE_METADATA = {
   title: `Mushfiqur's blog – Full Stack Developer, Tech Geek, Audiophile, Cinephile, and Lifelong Learner!`,
   author: 'Mushfiqur Rahman Shishir',
   headerTitle: `Mushfiqur's blog – Full Stack Developer, Tech Geek, Audiophile, Cinephile, and Lifelong Learner!`,
-  description: `A personal blog a Software Developer, Software Engineer, Principal Engineer, React Developer, NodeJs Developer`,
+  description: `A personal blog of a Software Developer, Software Engineer, Principal Engineer, React Developer, NodeJs Developer`,
   language: 'en-us',
   theme: 'dark', // system, dark or light
   // siteUrl: 'localhost:3435',

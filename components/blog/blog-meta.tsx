@@ -1,5 +1,5 @@
 import type readingTime from 'reading-time'
-import type { StatsType } from '~/db/schema'
+import type { StatsType } from '~/utils/supabase'
 import { formatDate, getTimeAgo } from '~/utils/misc'
 import { ViewsCounter } from './views-counter'
 
@@ -31,7 +31,7 @@ export function BlogMeta({ date, lastmod, type, slug, readingTime }: BlogMetaPro
         <span className="text-gray-300 dark:text-gray-700">/</span>
         <span>{Math.ceil(readingTime.minutes)} mins read</span>
         <span className="text-gray-300 dark:text-gray-700">/</span>
-        <ViewsCounter type={type} slug={slug} />
+        <ViewsCounter type={type} slug={slug} writeView />
       </dd>
     </dl>
   )
