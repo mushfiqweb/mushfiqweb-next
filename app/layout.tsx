@@ -16,6 +16,8 @@ import { KBarSearchProvider } from '~/components/search/kbar-provider'
 import { TiltedGridBackground } from '~/components/ui/tilted-grid-background'
 import { SITE_METADATA } from '~/data/site-metadata'
 import { ThemeProviders } from './theme-providers'
+import { MatrixProvider } from '~/components/ui/matrix-provider'
+import { MatrixBackground } from '~/components/ui/matrix-background'
 
 const FONT_HYPER = localFont({
   src: '../public/static/fonts/HYPE-Strong.otf',
@@ -150,12 +152,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       >
         <TiltedGridBackground className="inset-x-0 top-0 z-[-1] h-[70vh]" />
         <ThemeProviders>
-          <UmamiAnalytics websiteId={SITE_METADATA.analytics.umamiAnalytics.websiteId} />
-          <KBarSearchProvider configs={SITE_METADATA.search.kbarConfigs}>
-            <Header />
-            <main className="mb-auto grow">{children}</main>
-          </KBarSearchProvider>
-          <Footer />
+          <MatrixProvider>
+            <UmamiAnalytics websiteId={SITE_METADATA.analytics.umamiAnalytics.websiteId} />
+            <KBarSearchProvider configs={SITE_METADATA.search.kbarConfigs}>
+              <Header />
+              <main className="mb-auto grow">{children}</main>
+            </KBarSearchProvider>
+            <Footer />
+            <MatrixBackground />
+          </MatrixProvider>
         </ThemeProviders>
         <SpeedInsights />
         <Analytics />

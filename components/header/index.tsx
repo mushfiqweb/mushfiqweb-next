@@ -10,6 +10,7 @@ import { SITE_METADATA } from '~/data/site-metadata'
 import { KbarSearchTrigger } from '../search/kbar-trigger'
 import { MobileNav } from './mobile-nav'
 import { ThemeSwitcher } from './theme-switcher'
+import { MatrixSettings } from './matrix-settings'
 
 //'bg-white/75 py-2 backdrop-blur dark:bg-dark/75',
 
@@ -63,6 +64,7 @@ export function Header() {
               className="hidden h-4 w-px shrink-0 bg-gray-200 dark:bg-gray-600 md:block"
             />
             <div className="flex items-center gap-2">
+              <MatrixSettings />
               <ThemeSwitcher />
               <KbarSearchTrigger />
               <MobileNav />
