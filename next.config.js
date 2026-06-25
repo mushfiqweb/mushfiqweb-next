@@ -68,6 +68,32 @@ module.exports = () => {
     basePath,
     reactStrictMode: true,
     pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
+    turbopack: {
+      rules: {
+        '*.svg': {
+          loaders: [
+            {
+              loader: '@svgr/webpack',
+              options: {
+                svgoConfig: {
+                  plugins: [
+                    {
+                      name: 'prefixIds',
+                      params: {
+                        delim: '__',
+                        prefixIds: true,
+                        prefixClassNames: true,
+                      },
+                    },
+                  ],
+                },
+              },
+            },
+          ],
+          as: '*.js',
+        },
+      },
+    },
     images: {
       remotePatterns: [
         {
