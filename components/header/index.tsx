@@ -27,6 +27,9 @@ const SiteTitle = () => {
 
 export function Header() {
   let pathname = usePathname()
+  if (pathname === '/new' || pathname.startsWith('/new/')) {
+    return null
+  }
   return (
     <HeaderContainer
       as="header"
