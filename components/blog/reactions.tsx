@@ -90,6 +90,17 @@ export function Reactions({
     } catch (e) {}
   }, [type, slug])
 
+  const reactionsRef = useRef(reactions)
+  useEffect(() => {
+    reactionsRef.current = reactions
+  }, [reactions])
+
+  useEffect(() => {
+    if (stats) {
+      setInitialReactions(reactionsRef.current)
+    }
+  }, [stats])
+
   function handleToggle(key: string) {
     if (isLoading || !stats) return
 
