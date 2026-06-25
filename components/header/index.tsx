@@ -15,7 +15,7 @@ import { ThemeSwitcher } from './theme-switcher'
 
 const SiteTitle = () => {
   return (
-    <div className="header-title text-3xl">
+    <div className="header-title text-xl sm:text-2xl md:text-3xl">
       <span className="bg-gray-800 pl-2 pt-2 font-bold text-white transition-all dark:bg-white dark:text-black">
         MUSHFIQUR'S {'  '}
       </span>{' '}

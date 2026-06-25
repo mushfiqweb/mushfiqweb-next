@@ -12,11 +12,10 @@ export function TiltedGridBackground({ className }: { className?: string }) {
     >
       <Image
         src={TiltedGrid}
-        layout="fill"
-        objectFit="cover"
+        fill
         alt=""
         className={clsx([
-          'h-[160%] w-full',
+          'h-[160%] w-full object-cover',
           // 'absolute inset-x-0 inset-y-[-30%] skew-y-[-18deg]',
           // 'dark:fill-white/[.01] dark:stroke-white/[.025]',
           'fill-black/[0.02] stroke-black/5',

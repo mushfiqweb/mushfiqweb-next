@@ -11,7 +11,7 @@ import { TagsList } from '~/components/blog/tags'
 import { Container } from '~/components/ui/container'
 import { GradientDivider } from '~/components/ui/gradient-divider'
 import { SITE_METADATA } from '~/data/site-metadata'
-import type { StatsType } from '~/db/schema'
+import type { StatsType } from '~/utils/supabase'
 import type { CoreContent } from '~/types/data'
 
 interface PostSimpleProps {

@@ -18,17 +18,17 @@ export function BookCard({ book }: { book: GoodreadsBook }) {
       </div>
       <div className="flex grow flex-col justify-between gap-8">
         <div className="space-y-4">
-          <div className="space-y-2">
-            <div className="flex items-start justify-between gap-12 text-xl font-semibold md:text-2xl">
+          <div className="flex grow items-start justify-between gap-12">
+            <h2 className="grow text-xl font-semibold md:text-2xl">
               {book.link ? (
                 <Link href={book.link}>
                   <GrowingUnderline>{book.title}</GrowingUnderline>
                 </Link>
               ) : (
-                <h3>{book.title}</h3>
+                book.title
               )}
-              <Rating rating={book.user_rating} className="hidden md:inline-flex" />
-            </div>
+            </h2>
+            <Rating rating={book.user_rating} className="hidden shrink-0 md:inline-flex" />
           </div>
           <BookDetails book={book} />
         </div>

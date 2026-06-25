@@ -1,6 +1,8 @@
 import { genPageMetadata } from 'app/seo'
 import type { Author } from 'contentlayer/generated'
 import { allAuthors } from 'contentlayer/generated'
+import { MDX_COMPONENTS } from '~/components/mdx'
+import { MDXLayoutRenderer } from '~/components/mdx/layout-renderer'
 import { AuthorLayout } from '~/layouts/author-layout'
 import { coreContent } from '~/utils/contentlayer'
 
@@ -12,8 +14,7 @@ export default function AboutPage() {
 
   return (
     <AuthorLayout content={mainContent}>
-      {/* TODO: MDX seems to be broken on this page, so I'm back to JSX for now */}
-      {/* <MDXLayoutRenderer code={author.body.code} /> */}
+      <MDXLayoutRenderer code={author.body.code} components={MDX_COMPONENTS} />
     </AuthorLayout>
   )
 }
