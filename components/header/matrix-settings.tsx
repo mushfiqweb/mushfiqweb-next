@@ -75,7 +75,7 @@ export function MatrixSettings() {
         leaveFrom="opacity-100 translate-y-0"
         leaveTo="opacity-0 translate-y-1"
       >
-        <div className="absolute right-[-100px] top-full z-50 mt-2 w-64 origin-top-right rounded-xl border border-gray-200 bg-white p-4 shadow-xl dark:border-neutral-800 dark:bg-neutral-900 sm:right-0">
+        <div className="absolute right-[-100px] top-full z-50 mt-2 w-64 origin-top-right rounded-xl border border-gray-200/50 bg-white/45 p-4 shadow-xl backdrop-blur-md dark:border-neutral-800/50 dark:bg-dark/45 sm:right-0">
           <div className="space-y-4">
             {/* Title & Enable Switch */}
             <div className="flex items-center justify-between border-b border-gray-100 pb-2 dark:border-neutral-800">
