@@ -1,4 +1,4 @@
-import type { Author, Blog } from 'contentlayer/generated'
+import type { Author, Blog } from '~/types/blog'
 import type { ReactNode } from 'react'
 import { BlogMeta } from '~/components/blog/blog-meta'
 import { Comments } from '~/components/blog/comments'
@@ -57,6 +57,16 @@ export function PostLayout({ content, next, prev, children }: LayoutProps) {
         <div className="grid grid-cols-1 gap-12 pb-10 pt-8 lg:grid-cols-12 lg:pt-10">
           <div className="divide-y divide-gray-200 dark:divide-gray-700 lg:col-span-8 xl:col-span-9">
             <div className="prose max-w-none dark:prose-invert lg:prose-lg lg:pb-8">{children}</div>
+            <div className="flex flex-col items-center justify-center py-8 lg:hidden">
+              <h4 className="dark:text-zinc-450 mb-4 text-sm font-medium uppercase tracking-wider text-gray-500">
+                Reactions
+              </h4>
+              <Reactions
+                className="justify-center"
+                type={type.toLowerCase() as StatsType}
+                slug={slug}
+              />
+            </div>
           </div>
           <div className="hidden lg:col-span-4 lg:block xl:col-span-3">
             <div className="space-y-4 divide-y divide-gray-200 dark:divide-gray-700 lg:sticky lg:top-24">

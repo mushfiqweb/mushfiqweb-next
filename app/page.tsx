@@ -1,4 +1,5 @@
-import { allBlogs, allSnippets } from 'contentlayer/generated'
+import { allBlogs } from '~/data/blog-registry'
+import { allSnippets } from '~/data/snippet-registry'
 import { Home } from '~/components/home-page'
 import { allCoreContent } from '~/utils/contentlayer'
 import { sortPosts } from '~/utils/misc'

@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server'
-import { allBlogs } from 'contentlayer/generated'
+import { allBlogs } from '~/data/blog-registry'
 import { allCoreContent } from '~/utils/contentlayer'
 import { sortPosts } from '~/utils/misc'
 

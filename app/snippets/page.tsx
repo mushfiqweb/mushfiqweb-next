@@ -1,5 +1,5 @@
 import { genPageMetadata } from 'app/seo'
-import { allSnippets } from 'contentlayer/generated'
+import { allSnippets } from '~/data/snippet-registry'
 import { SnippetCard } from '~/components/cards/snippet'
 import { Container } from '~/components/ui/container'
 import { PageHeader } from '~/components/ui/page-header'

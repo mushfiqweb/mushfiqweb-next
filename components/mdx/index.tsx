@@ -5,6 +5,8 @@ import { Twemoji } from '~/components/ui/twemoji'
 import { CodeTitle } from './code-title'
 import { Pre } from './pre'
 import { TableWrapper } from './table-wrapper'
+import { Callout } from './callout'
+import { CodeBlock } from './code-block'
 
 export const MDX_COMPONENTS: MDXComponents = {
   Image: ({ alt, ...rest }: ImageProps) => {
@@ -16,6 +18,8 @@ export const MDX_COMPONENTS: MDXComponents = {
   },
   Twemoji,
   CodeTitle,
+  Callout,
+  CodeBlock,
   a: Link,
   pre: Pre,
   table: TableWrapper,
