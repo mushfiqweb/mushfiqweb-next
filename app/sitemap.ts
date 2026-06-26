@@ -1,4 +1,5 @@
-import { allBlogs, allSnippets } from 'contentlayer/generated'
+import { allBlogs } from '~/data/blog-registry'
+import { allSnippets } from '~/data/snippet-registry'
 import type { MetadataRoute } from 'next'
 import { SITE_METADATA } from '~/data/site-metadata'
 

@@ -13,6 +13,7 @@ export function TiltedGridBackground({ className }: { className?: string }) {
       <Image
         src={TiltedGrid}
         fill
+        priority
         alt=""
         className={clsx([
           'h-[160%] w-full object-cover',

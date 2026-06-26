@@ -110,6 +110,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         FONT_HYPER.variable,
         FONT_JOSEFIN.variable
       )}
+      data-scroll-behavior="smooth"
       suppressHydrationWarning
     >
       <link

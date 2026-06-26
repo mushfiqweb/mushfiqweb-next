@@ -1,4 +1,4 @@
-import type { Blog, Snippet } from '~/.contentlayer/generated'
+import type { Blog, Snippet } from '~/types/blog'
 import { Container } from '~/components/ui/container'
 import type { CoreContent } from '~/types/data'
 import { SocialAccounts } from '../author/social-accounts'

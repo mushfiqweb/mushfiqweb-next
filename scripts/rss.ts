@@ -1,18 +1,19 @@
-import type { Blog, Snippet } from 'contentlayer/generated'
+import type { BlogPost, Snippet } from '~/types/blog'
 import { mkdirSync, writeFileSync } from 'fs'
 import { slug } from 'github-slugger'
 import path from 'path'
-import { allBlogs, allSnippets } from '~/.contentlayer/generated/index.mjs'
+import { allBlogs } from '~/data/blog-registry'
+import { allSnippets } from '~/data/snippet-registry'
 import { SITE_METADATA } from '~/data/site-metadata'
 import tagData from '~/json/tag-data.json' assert { type: 'json' }
 import { escape } from '~/utils/html-escaper'
 import { sortPosts } from '~/utils/misc'
 
-const blogs = allBlogs as unknown as Blog[]
-const snippets = allSnippets as unknown as Snippet[]
+const blogs = allBlogs
+const snippets = allSnippets
 const RSS_PAGE = 'feed.xml'
 
-function generateRssItem(item: Blog | Snippet) {
+function generateRssItem(item: BlogPost | Snippet) {
   let { siteUrl, email, author } = SITE_METADATA
   return `
 		<item>
@@ -27,7 +28,7 @@ function generateRssItem(item: Blog | Snippet) {
 	`
 }
 
-function generateRss(items: (Blog | Snippet)[], page = RSS_PAGE) {
+function generateRss(items: (BlogPost | Snippet)[], page = RSS_PAGE) {
   let { title, siteUrl, description, language, email, author } = SITE_METADATA
   return `
 		<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">

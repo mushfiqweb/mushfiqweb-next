@@ -1,5 +1,3 @@
-import type { MDXDocumentDate } from '~/types/data'
-
 export function formatDate(date: string) {
   return new Date(date).toLocaleDateString('en-US', {
     year: 'numeric',
@@ -72,9 +70,12 @@ export function getTimeAgo(time: string | number | Date, now = Date.now()): stri
 }
 
 /**
- * Sorts a list of MDX documents by date in descending order
+ * Sorts a list of documents by date in descending order
  */
-export function sortPosts<T extends MDXDocumentDate>(allBlogs: T[], dateKey: string = 'date'): T[] {
+export function sortPosts<T extends { [key: string]: any }>(
+  allBlogs: T[],
+  dateKey: string = 'date'
+): T[] {
   return allBlogs.sort((a, b) => dateSortDesc(a[dateKey], b[dateKey]))
 }
 

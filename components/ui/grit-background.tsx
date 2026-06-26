@@ -1,15 +1,24 @@
 import { clsx } from 'clsx'
 
+const blackGrit = '/static/images/black-grit.png'
+const whiteGrit = '/static/images/white-grit.png'
+
 export function GritBackground({ className }: { className?: string }) {
   return (
-    <div
-      className={clsx([
-        'absolute z-[-1]',
-        'bg-cover bg-center',
-        '[background-image:url("/static/images/black-grit.png")]',
-        'dark:[background-image:url("/static/images/white-grit.png")]',
-        className,
-      ])}
-    />
+    <>
+      <style
+        dangerouslySetInnerHTML={{
+          __html: `
+        .grit-bg {
+          background-image: url("${blackGrit}");
+        }
+        .dark .grit-bg {
+          background-image: url("${whiteGrit}");
+        }
+      `,
+        }}
+      />
+      <div className={clsx(['absolute z-[-1]', 'bg-cover bg-center', 'grit-bg', className])} />
+    </>
   )
 }
