@@ -13,7 +13,7 @@ export const SITE_METADATA = {
   email: 'mushfiqweb@gmail.com',
   github: 'https://github.com/mushfiqweb',
   x: 'https://x.com/mushfiqweb',
-  facebook: 'https://facebook.com/shiss',
+  facebook: 'https://www.facebook.com/mushfiqweb',
   youtube: 'https://www.youtube.com/mushfiqwebTV',
   linkedin: 'https://www.linkedin.com/in/mushfiqweb',
   threads: 'https://www.threads.net/mushfiqweb',
