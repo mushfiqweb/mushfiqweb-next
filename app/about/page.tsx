@@ -3,7 +3,11 @@ import { allAuthors } from '~/data/author-registry'
 import { AuthorLayout } from '~/layouts/author-layout'
 import { Twemoji } from '~/components/ui/twemoji'
 
-export let metadata = genPageMetadata({ title: 'About' })
+export let metadata = genPageMetadata({
+  title: 'About',
+  description:
+    'About Mushfiqur Rahman Shishir - CTO at AGT Software Partners, Co-Founder at KMS Marketplace & KMS Tech. Bringing over 15 years of experience in delivering impactful full-stack solutions.',
+})
 
 export default function AboutPage() {
   let author = allAuthors.find((p) => p.slug === 'default')!
@@ -14,9 +18,41 @@ export default function AboutPage() {
         Hi <Twemoji emoji="waving-hand" /> I'm Mushfiqur Rahman Shishir
       </h2>
       <p>
-        I have a passion for all things <strong>JavaScript</strong>. I enjoy building eCommerce
-        software and stuff related to web dev. I work mainly with <strong>TypeScript</strong>,{' '}
-        <strong>React</strong>, <strong>Node</strong>, <strong>Remix</strong>, and{' '}
+        While playing the role of CTO at{' '}
+        <a href="https://allgentech.io/" target="_blank" rel="noopener noreferrer">
+          AGT Software Partners
+        </a>
+        , I have been actively involved in full-stack development, bringing over 15 years of
+        experience in delivering impactful solutions across diverse industries.
+      </p>
+
+      <h3>Current Roles &amp; Leadership</h3>
+      <ul>
+        <li>
+          <strong>CTO</strong> at{' '}
+          <a href="https://allgentech.io/" target="_blank" rel="noopener noreferrer">
+            AGT Software Partners
+          </a>
+        </li>
+        <li>
+          <strong>Co-Founder</strong> at{' '}
+          <a href="https://kmstech.co" target="_blank" rel="noopener noreferrer">
+            KMS Marketplace
+          </a>
+        </li>
+        <li>
+          <strong>Co-Founder</strong> at{' '}
+          <a href="https://kmstech.co" target="_blank" rel="noopener noreferrer">
+            KMS Tech
+          </a>
+        </li>
+      </ul>
+
+      <p>
+        I have a passion for all things <strong>JavaScript</strong> and modern web ecosystems. I
+        enjoy building scalable eCommerce platforms, high-performance distributed web applications,
+        and cutting-edge software solutions. I work mainly with <strong>TypeScript</strong>,{' '}
+        <strong>React</strong>, <strong>Node.js</strong>, <strong>Remix</strong>, and{' '}
         <strong>Next.js</strong>.
       </p>
 

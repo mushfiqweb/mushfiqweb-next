@@ -93,40 +93,30 @@ function KmsTechLogo({ className }: { className?: string }) {
   )
 }
 
-export function FooterBottom() {
+export function FooterBottom({ isActive }: { isActive?: boolean } = {}) {
   return (
-    <div
-      className={clsx([
-        'w-full',
-        'flex flex-col items-center justify-center gap-4 md:flex-row md:justify-between md:gap-16',
-        'px-6 py-4 md:px-8 md:py-5',
-        'bg-neutral-50/60 backdrop-blur-md dark:bg-dark/30',
-        'border border-gray-200/50 dark:border-neutral-800/50',
-        'rounded-[24px] md:rounded-[32px]',
-        'shadow-[0_2px_8px_rgba(0,0,0,0.04)] dark:shadow-none',
-        'transition-shadow duration-300 hover:shadow-[0_4px_12px_rgba(0,0,0,0.06)] dark:hover:shadow-none',
-      ])}
-    >
+    <div className="flex w-full flex-row items-center justify-between gap-2 sm:gap-6 md:gap-8">
       {/* Left side: Spotify Now Playing */}
-      <div className="flex w-full items-center justify-center md:w-auto md:justify-start">
+      <div className="flex min-w-0 flex-1 items-center justify-start">
         <SpotifyNowPlaying
-          className="w-full justify-center truncate [--artist-color:theme(colors.gray.500)] md:max-w-[320px] md:justify-start"
+          className="w-full justify-start [--artist-color:theme(colors.gray.500)] [--song-color:theme(colors.neutral.800)] dark:[--song-color:theme(colors.neutral.200)]"
           songEffect="underline"
           showCover
+          isActive={isActive}
         />
       </div>
 
       {/* Right side: Powered by KMS Tech Logo Link */}
-      <div className="flex select-none items-center justify-center">
+      <div className="flex shrink-0 select-none items-center justify-end pl-1 sm:pl-0">
         <Link
           href="https://kmstech.co"
-          className="group flex items-center gap-2.5 transition-all duration-300 hover:scale-105"
+          className="group flex items-center gap-1 sm:gap-2 transition-all duration-300 hover:scale-105"
           data-umami-event="footer-kms-tech-link"
         >
-          <span className="text-xs font-medium text-zinc-400 transition-colors duration-300 group-hover:text-zinc-600 dark:text-zinc-500 dark:group-hover:text-zinc-300">
+          <span className="text-[10px] sm:text-xs font-medium text-zinc-400 transition-colors duration-300 group-hover:text-zinc-600 dark:text-zinc-500 dark:group-hover:text-zinc-300">
             powered by
           </span>
-          <KmsTechLogo className="h-5 w-auto" />
+          <KmsTechLogo className="h-3.5 sm:h-5 w-auto" />
         </Link>
       </div>
     </div>

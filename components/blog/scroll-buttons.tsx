@@ -16,7 +16,12 @@ export function ScrollButtons() {
   }, [])
 
   return (
-    <div className={clsx('fixed bottom-8 right-8 hidden flex-col gap-3', show && 'lg:flex')}>
+    <div
+      className={clsx(
+        'fixed bottom-16 right-6 z-30 hidden flex-col gap-3 md:bottom-20 md:right-8',
+        show && 'lg:flex'
+      )}
+    >
       <ScrollButton
         ariaLabel="Scroll To Comment"
         onClick={() => document.getElementById('comment')?.scrollIntoView()}
