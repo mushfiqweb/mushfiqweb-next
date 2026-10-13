@@ -31,7 +31,6 @@ export function Header() {
   let pathname = usePathname()
   const [isScrolling, setIsScrolling] = useState(false)
   const [isHovered, setIsHovered] = useState(false)
-  const [isScrolled, setIsScrolled] = useState(false)
   const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null)
 
   useEffect(() => {
@@ -39,9 +38,8 @@ export function Header() {
 
     const handleScroll = () => {
       const currentScrollY = window.scrollY
-      setIsScrolled(currentScrollY > 8)
 
-      if (Math.abs(currentScrollY - lastScrollY) > 2) {
+      if (Math.abs(currentScrollY - lastScrollY) >= 1) {
         setIsScrolling(true)
         lastScrollY = currentScrollY
 
@@ -51,11 +49,9 @@ export function Header() {
 
         scrollTimeoutRef.current = setTimeout(() => {
           setIsScrolling(false)
-        }, 1200)
+        }, 1000)
       }
     }
-
-    handleScroll()
 
     window.addEventListener('scroll', handleScroll, { passive: true, capture: true })
     document.addEventListener('scroll', handleScroll, { passive: true })
@@ -74,7 +70,7 @@ export function Header() {
     return null
   }
 
-  const isHeaderActive = isScrolled || isHovered || isScrolling
+  const isHeaderActive = isHovered || isScrolling
 
   return (
     <HeaderContainer

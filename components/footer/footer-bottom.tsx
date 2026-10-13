@@ -103,6 +103,9 @@ export function FooterBottom({ isActive }: { isActive?: boolean } = {}) {
           songEffect="underline"
           showCover
           isActive={isActive}
+          hideAlbumOnMobile
+          hideArtistOnMobile
+          compactTitleOnMobile
         />
       </div>
 

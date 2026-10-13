@@ -13,13 +13,25 @@ export function SpotifyNowPlaying({
   showCover,
   songEffect = 'none',
   isActive,
+  hideAlbumOnMobile = false,
+  hideArtistOnMobile = false,
+  compactTitleOnMobile = false,
+  compactOnMobile = false,
 }: {
   className?: string
   showCover?: boolean
   songEffect?: 'none' | 'underline'
   isActive?: boolean
+  hideAlbumOnMobile?: boolean
+  hideArtistOnMobile?: boolean
+  compactTitleOnMobile?: boolean
+  compactOnMobile?: boolean
 }) {
   let { isPlaying, songUrl, title, artist, album, albumImageUrl } = useNowPlaying()
+
+  let shouldHideAlbum = hideAlbumOnMobile || compactOnMobile
+  let shouldHideArtist = hideArtistOnMobile || compactOnMobile
+  let shouldCompactTitle = compactTitleOnMobile || compactOnMobile
 
   return (
     <div className={clsx(['flex items-center min-w-0', className])}>
@@ -46,7 +58,12 @@ export function SpotifyNowPlaying({
               className="inline-flex items-center whitespace-nowrap text-xs sm:text-sm font-medium transition-colors"
               title={`${title} - ${artist || ''}${album ? ` - Album: ${album}` : ''}`}
             >
-              <span className="font-semibold text-[--song-color] whitespace-nowrap">
+              <span
+                className={clsx(
+                  'font-semibold text-[--song-color] whitespace-nowrap',
+                  shouldCompactTitle && 'text-[12px] leading-tight sm:text-sm sm:leading-normal'
+                )}
+              >
                 {songEffect === 'underline' ? (
                   <GrowingUnderline data-umami-event="spotify-now-playing-view-song" className="whitespace-nowrap">
                     {title}
@@ -56,16 +73,26 @@ export function SpotifyNowPlaying({
                 )}
               </span>
               {artist && (
-                <>
+                <span
+                  className={clsx(
+                    'items-center whitespace-nowrap',
+                    shouldHideArtist ? 'hidden sm:inline-flex' : 'inline-flex'
+                  )}
+                >
                   <span className="mx-1 sm:mx-1.5 text-[--artist-color] whitespace-nowrap">-</span>
                   <span className="text-[--artist-color] whitespace-nowrap">{artist}</span>
-                </>
+                </span>
               )}
               {album && (
-                <>
+                <span
+                  className={clsx(
+                    'items-center whitespace-nowrap',
+                    shouldHideAlbum ? 'hidden sm:inline-flex' : 'inline-flex'
+                  )}
+                >
                   <span className="mx-1 sm:mx-1.5 text-[--artist-color] whitespace-nowrap">-</span>
                   <span className="text-[--artist-color] whitespace-nowrap">Album: {album}</span>
-                </>
+                </span>
               )}
             </Link>
           </div>
