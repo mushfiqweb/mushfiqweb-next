@@ -1,12 +1,12 @@
 'use client'
 
-import { clsx } from 'clsx'
-import { Brand } from '~/components/ui/brand'
-import { GrowingUnderline } from '~/components/ui/growing-underline'
-import { Link } from '~/components/ui/link'
-import { MusicWaves } from '~/components/ui/music-waves'
-import { useNowPlaying } from '~/hooks/use-now-playing'
-import { Image } from './image'
+import { clsx } from 'clsx';
+import { Brand } from '~/components/ui/brand';
+import { GrowingUnderline } from '~/components/ui/growing-underline';
+import { Link } from '~/components/ui/link';
+import { MusicWaves } from '~/components/ui/music-waves';
+import { useNowPlaying } from '~/hooks/use-now-playing';
+import { Image } from './image';
 
 export function SpotifyNowPlaying({
   className,
@@ -36,7 +36,7 @@ export function SpotifyNowPlaying({
   return (
     <div className={clsx(['flex items-center min-w-0', className])}>
       {isPlaying && showCover && albumImageUrl ? (
-        <Image
+        <Image 
           src={albumImageUrl}
           alt={title || 'Spotify track'}
           width={40}
