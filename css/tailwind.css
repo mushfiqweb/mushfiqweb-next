@@ -192,7 +192,6 @@ samp {
   cursor: pointer;
   font-size: 18px;
   position: relative;
-  white-space: nowrap;
   color: var(--color-text);
 }
 
@@ -232,3 +231,88 @@ samp {
   transform-origin: 0% 50%;
   transform: scale3d(1, 1, 1);
 }
+
+/* ==========================================================================
+   Hero Interactive Link Keyframes & Utilities
+   ========================================================================== */
+
+@keyframes hero-badge-reveal {
+  0% {
+    opacity: 0;
+    transform: translateY(6px) scale(0.96);
+    filter: blur(3px);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-1px) scale(1.02);
+    filter: blur(0px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0px);
+  }
+}
+
+@keyframes hero-sheen-sweep {
+  0% {
+    transform: translateX(-120%);
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(220%);
+    opacity: 0;
+  }
+}
+
+@keyframes hero-glow-bloom {
+  0% {
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  }
+  45% {
+    box-shadow: var(--hero-glow-color);
+  }
+  100% {
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  }
+}
+
+.animate-hero-reveal {
+  animation: hero-badge-reveal 0.65s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-hero-sheen {
+  animation: hero-sheen-sweep 0.85s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.animate-hero-glow {
+  animation: hero-glow-bloom 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.hero-glow-indigo,
+.hero-glow-linkedin {
+  --hero-glow-color: 0 0 14px rgba(0, 119, 181, 0.45);
+}
+
+.hero-glow-emerald,
+.hero-glow-agt {
+  --hero-glow-color: 0 0 14px rgba(9, 135, 163, 0.45);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-hero-reveal,
+  .animate-hero-sheen,
+  .animate-hero-glow {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
+}
+

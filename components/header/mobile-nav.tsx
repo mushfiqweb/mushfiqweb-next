@@ -68,14 +68,30 @@ export function MobileNav() {
             leaveTo="translate-x-full opacity-0"
             unmount={false}
           >
-            <DialogPanel className="fixed left-0 top-0 z-70 h-full w-full bg-white opacity-95 duration-300 dark:bg-gray-950 dark:opacity-[0.98]">
-              <div className="flex items-center gap-3 pl-10 pt-8">
-                <Logo />
-                <span className="font-medium">{SITE_METADATA.headerTitle}</span>
+            <DialogPanel className="fixed left-0 top-0 z-70 h-full w-full flex flex-col bg-white opacity-95 duration-300 dark:bg-gray-950 dark:opacity-[0.98]">
+              {/* Header bar with Logo, Title, and Close Button */}
+              <div className="flex items-center justify-between gap-3 px-6 pt-6 sm:px-10 sm:pt-8 shrink-0">
+                <div className="flex min-w-0 items-center gap-3">
+                  <div onClick={onToggleNav} className="shrink-0">
+                    <Logo />
+                  </div>
+                  <span className="font-medium text-sm sm:text-base text-gray-900 dark:text-gray-100 line-clamp-2">
+                    {SITE_METADATA.headerTitle}
+                  </span>
+                </div>
+                <button
+                  className="shrink-0 -mr-2 rounded-lg p-2.5 text-gray-900 hover:bg-gray-100 hover:text-primary-500 focus:outline-none dark:text-gray-100 dark:hover:bg-gray-850 dark:hover:text-primary-400 transition-colors"
+                  aria-label="Toggle Menu"
+                  onClick={onToggleNav}
+                >
+                  <X className="h-6 w-6 sm:h-7 sm:w-7" strokeWidth={1.5} />
+                </button>
               </div>
+
+              {/* Navigation links */}
               <nav
                 ref={navRef}
-                className="mt-4 flex h-full basis-0 flex-col items-start gap-4 overflow-y-auto pl-10 pt-2"
+                className="mt-6 flex h-full basis-0 flex-col items-start gap-4 overflow-y-auto px-6 sm:px-10 pt-2 pb-12"
               >
                 {[...HEADER_NAV_LINKS, ...MORE_NAV_LINKS].map((link) => (
                   <Link
@@ -89,13 +105,6 @@ export function MobileNav() {
                   </Link>
                 ))}
               </nav>
-              <button
-                className="fixed right-4 top-5 z-80 h-16 w-16 p-4 text-gray-900 hover:text-primary-500 dark:text-gray-100 dark:hover:text-primary-400"
-                aria-label="Toggle Menu"
-                onClick={onToggleNav}
-              >
-                <X className="h-7 w-7" strokeWidth={1.5} />
-              </button>
             </DialogPanel>
           </TransitionChild>
         </Dialog>

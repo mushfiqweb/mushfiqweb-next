@@ -1,3 +1,4 @@
+const path = require('path')
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 })
@@ -67,6 +68,7 @@ module.exports = () => {
     reactStrictMode: true,
     pageExtensions: ['ts', 'tsx', 'js', 'jsx'],
     turbopack: {
+      root: path.resolve(__dirname),
       resolveAlias: {},
       rules: {
         '*.svg': {

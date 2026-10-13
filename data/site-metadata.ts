@@ -2,7 +2,7 @@ export const SITE_METADATA = {
   title: `Mushfiqur's blog – Full Stack Developer, Tech Geek, Audiophile, Cinephile, and Lifelong Learner!`,
   author: 'Mushfiqur Rahman Shishir',
   headerTitle: `Mushfiqur's blog – Full Stack Developer, Tech Geek, Audiophile, Cinephile, and Lifelong Learner!`,
-  description: `A personal blog of a Software Developer, Software Engineer, Principal Engineer, React Developer, NodeJs Developer`,
+  description: `While playing the role of CTO at AGT Software Partners, I have been actively involved in full-stack development, bringing over 15 years of experience in delivering impactful solutions across diverse industries. Co-Founder at KMS Marketplace & KMS Tech.`,
   language: 'en-us',
   theme: 'dark', // system, dark or light
   // siteUrl: 'localhost:3435',

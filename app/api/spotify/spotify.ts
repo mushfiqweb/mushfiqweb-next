@@ -2,15 +2,20 @@ const SPOTIFY_TOKEN_API = `https://accounts.spotify.com/api/token`
 const SPOTIFY_NOW_PLAYING_API = `https://api.spotify.com/v1/me/player/currently-playing`
 const SPOTIFY_TOP_TRACKS_API = `https://api.spotify.com/v1/me/top/tracks`
 
-let {
-  SPOTIFY_CLIENT_ID: client_id,
-  SPOTIFY_CLIENT_SECRET: client_secret,
-  SPOTIFY_REFRESH_TOKEN: refresh_token = '',
-} = process.env
-
-let basic = Buffer.from(`${client_id}:${client_secret}`).toString('base64')
+function getSpotifyCredentials() {
+  const client_id = process.env.SPOTIFY_CLIENT_ID || ''
+  const client_secret = process.env.SPOTIFY_CLIENT_SECRET || ''
+  const refresh_token = process.env.SPOTIFY_REFRESH_TOKEN || ''
+  const basic = Buffer.from(`${client_id}:${client_secret}`).toString('base64')
+  return { client_id, client_secret, refresh_token, basic }
+}
 
 async function getAccessToken() {
+  const { refresh_token, basic } = getSpotifyCredentials()
+  if (!refresh_token || !basic) {
+    return { access_token: undefined }
+  }
+
   let response = await fetch(SPOTIFY_TOKEN_API, {
     method: 'POST',
     headers: {
@@ -28,7 +33,16 @@ async function getAccessToken() {
 }
 
 export async function getNowPlaying() {
-  let { access_token } = await getAccessToken()
+  let tokenData = await getAccessToken()
+  let access_token = tokenData?.access_token
+
+  if (!access_token) {
+    return new Response(JSON.stringify({ isPlaying: false, error: tokenData?.error || 'unauthorized' }), {
+      status: 401,
+      headers: { 'Content-Type': 'application/json' },
+    })
+  }
+
   let url = new URL(SPOTIFY_NOW_PLAYING_API)
   url.searchParams.append('additional_types', 'track,episode')
 
@@ -41,7 +55,15 @@ export async function getNowPlaying() {
 }
 
 export async function getTopTracks() {
-  let { access_token } = await getAccessToken()
+  let tokenData = await getAccessToken()
+  let access_token = tokenData?.access_token
+
+  if (!access_token) {
+    return new Response(JSON.stringify({ error: tokenData?.error || 'unauthorized' }), {
+      status: 401,
+      headers: { 'Content-Type': 'application/json' },
+    })
+  }
 
   return fetch(SPOTIFY_TOP_TRACKS_API, {
     headers: {
@@ -49,3 +71,4 @@ export async function getTopTracks() {
     },
   })
 }
+

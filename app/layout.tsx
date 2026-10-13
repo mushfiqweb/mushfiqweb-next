@@ -6,7 +6,7 @@ import 'remark-github-blockquote-alert/alert.css'
 import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import clsx from 'clsx'
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { JetBrains_Mono, Josefin_Sans, Playpen_Sans, Titillium_Web } from 'next/font/google'
 import localFont from 'next/font/local'
 import { UmamiAnalytics } from '~/components/analytics/umami'
@@ -63,6 +63,26 @@ export let metadata: Metadata = {
     template: `%s | ${SITE_METADATA.title}`,
   },
   description: SITE_METADATA.description,
+  keywords: [
+    'Mushfiqur Rahman Shishir',
+    'CTO at AGT Software Partners',
+    'AGT Software Partners',
+    'Co-Founder at KMS Marketplace',
+    'KMS Marketplace',
+    'Co-Founder at KMS Tech',
+    'KMS Tech',
+    'Full Stack Developer',
+    '15 years experience',
+    'TypeScript',
+    'React',
+    'Next.js',
+    'Node.js',
+    'Software Architecture',
+    'Engineering Leadership',
+  ],
+  authors: [{ name: 'Mushfiqur Rahman Shishir', url: SITE_METADATA.siteUrl }],
+  creator: 'Mushfiqur Rahman Shishir',
+  publisher: 'Mushfiqur Rahman Shishir',
   openGraph: {
     title: SITE_METADATA.title,
     description: SITE_METADATA.description,
@@ -91,9 +111,100 @@ export let metadata: Metadata = {
   },
   twitter: {
     title: SITE_METADATA.title,
+    description: SITE_METADATA.description,
     card: 'summary_large_image',
     images: [SITE_METADATA.socialBanner],
+    creator: '@mushfiqweb',
   },
+}
+
+const personAndWebsiteJsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Person',
+      '@id': `${SITE_METADATA.siteUrl}/#person`,
+      name: 'Mushfiqur Rahman Shishir',
+      alternateName: ['mushfiqweb', 'Mushfiqur Rahman'],
+      url: SITE_METADATA.siteUrl,
+      image: `${SITE_METADATA.siteUrl}/static/images/logo.jpg`,
+      description:
+        'While playing the role of CTO at AGT Software Partners, I have been actively involved in full-stack development, bringing over 15 years of experience in delivering impactful solutions across diverse industries.',
+      jobTitle: 'Chief Technology Officer (CTO)',
+      worksFor: {
+        '@type': 'Organization',
+        name: 'AGT Software Partners',
+        url: 'https://allgentech.io/',
+      },
+      hasOccupation: [
+        {
+          '@type': 'Role',
+          roleName: 'Chief Technology Officer (CTO)',
+          worksFor: {
+            '@type': 'Organization',
+            name: 'AGT Software Partners',
+            url: 'https://allgentech.io/',
+          },
+        },
+        {
+          '@type': 'Role',
+          roleName: 'Co-Founder',
+          worksFor: {
+            '@type': 'Organization',
+            name: 'KMS Marketplace',
+            url: 'https://kmstech.co',
+          },
+        },
+        {
+          '@type': 'Role',
+          roleName: 'Co-Founder',
+          worksFor: {
+            '@type': 'Organization',
+            name: 'KMS Tech',
+            url: 'https://kmstech.co',
+          },
+        },
+      ],
+      sameAs: [
+        'https://www.linkedin.com/in/mushfiqweb',
+        'https://github.com/mushfiqweb',
+        'https://twitter.com/mushfiqweb',
+        'https://x.com/mushfiqweb',
+        'https://allgentech.io/',
+        'https://kmstech.co',
+      ],
+      knowsAbout: [
+        'Full-Stack Development',
+        'Software Architecture',
+        'eCommerce Platforms',
+        'TypeScript',
+        'React',
+        'Next.js',
+        'Node.js',
+        'Engineering Leadership',
+      ],
+    },
+    {
+      '@type': 'WebSite',
+      '@id': `${SITE_METADATA.siteUrl}/#website`,
+      url: SITE_METADATA.siteUrl,
+      name: "Mushfiqur's blog",
+      description: SITE_METADATA.description,
+      publisher: {
+        '@id': `${SITE_METADATA.siteUrl}/#person`,
+      },
+    },
+  ],
+}
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  viewportFit: 'cover',
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#fff' },
+    { media: '(prefers-color-scheme: dark)', color: '#000' },
+  ],
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -113,6 +224,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       data-scroll-behavior="smooth"
       suppressHydrationWarning
     >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personAndWebsiteJsonLd) }}
+        />
+        <link rel="author" href={`${SITE_METADATA.siteUrl}/llms.txt`} />
+      </head>
       <link
         rel="icon"
         type="image/x-icon"
@@ -145,7 +263,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body
         className={clsx([
           'antialiased',
-          'relative min-h-screen',
+          'relative min-h-screen w-full max-w-full overflow-x-clip',
           'flex flex-col',
           'bg-white text-neutral-900',
           'dark:bg-dark dark:text-gray-100',
@@ -157,7 +275,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <UmamiAnalytics websiteId={SITE_METADATA.analytics.umamiAnalytics.websiteId} />
             <KBarSearchProvider configs={SITE_METADATA.search.kbarConfigs}>
               <Header />
-              <main className="mb-auto grow">{children}</main>
+              <main className="mb-auto grow pb-24 md:pb-28">{children}</main>
             </KBarSearchProvider>
             <Footer />
             <MatrixBackground />

@@ -14,9 +14,11 @@ import { MatrixSettings } from './matrix-settings'
 
 //'bg-white/75 py-2 backdrop-blur dark:bg-dark/75',
 
+import { useEffect, useRef, useState } from 'react'
+
 const SiteTitle = () => {
   return (
-    <div className="header-title text-xl sm:text-2xl md:text-3xl">
+    <div className="header-title whitespace-nowrap text-lg sm:text-2xl md:text-3xl">
       <span className="bg-gray-800 pl-2 pt-2 font-bold text-white transition-all dark:bg-white dark:text-black">
         MUSHFIQUR'S {'  '}
       </span>{' '}
@@ -27,28 +29,76 @@ const SiteTitle = () => {
 
 export function Header() {
   let pathname = usePathname()
+  const [isScrolling, setIsScrolling] = useState(false)
+  const [isHovered, setIsHovered] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
+  const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null)
+
+  useEffect(() => {
+    let lastScrollY = window.scrollY
+
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY
+      setIsScrolled(currentScrollY > 8)
+
+      if (Math.abs(currentScrollY - lastScrollY) > 2) {
+        setIsScrolling(true)
+        lastScrollY = currentScrollY
+
+        if (scrollTimeoutRef.current) {
+          clearTimeout(scrollTimeoutRef.current)
+        }
+
+        scrollTimeoutRef.current = setTimeout(() => {
+          setIsScrolling(false)
+        }, 1200)
+      }
+    }
+
+    handleScroll()
+
+    window.addEventListener('scroll', handleScroll, { passive: true, capture: true })
+    document.addEventListener('scroll', handleScroll, { passive: true })
+    window.addEventListener('touchmove', handleScroll, { passive: true, capture: true })
+    return () => {
+      window.removeEventListener('scroll', handleScroll, true)
+      document.removeEventListener('scroll', handleScroll)
+      window.removeEventListener('touchmove', handleScroll, true)
+      if (scrollTimeoutRef.current) {
+        clearTimeout(scrollTimeoutRef.current)
+      }
+    }
+  }, [])
+
   if (pathname === '/new' || pathname.startsWith('/new/')) {
     return null
   }
+
+  const isHeaderActive = isScrolled || isHovered || isScrolling
+
   return (
     <HeaderContainer
       as="header"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
       className={clsx(
-        // 'py-2 backdrop-blur',
-        'bg-white/25 py-2 backdrop-blur dark:bg-dark/25',
-        'shadow-lg saturate-100',
-        SITE_METADATA.stickyNav && 'sticky top-0 z-50 lg:top-0'
+        'sticky top-0 inset-x-0 z-50 w-full',
+        'bg-white/80 py-2 backdrop-blur-md dark:bg-dark/80',
+        'border-b border-gray-200/20 dark:border-neutral-800/40',
+        'transition-all duration-300 ease-out',
+        isHeaderActive
+          ? 'border-b-spotify/15 dark:border-b-spotify/20 shadow-[0_3px_12px_rgba(29,185,84,0.055)] dark:shadow-[0_3px_14px_rgba(29,185,84,0.075)] saturate-100'
+          : 'shadow-none sm:shadow-xs saturate-90'
       )}
     >
       <div className="mx-auto max-w-6xl">
-        <div className="flex items-center justify-between gap-3 md:pl-11 md:pr-11">
-          <div className="flex items-center gap-2">
+        <div className="flex items-center justify-between gap-2 md:gap-3 md:pl-11 md:pr-11">
+          <div className="flex min-w-0 items-center gap-2">
             <Link href="/" aria-label={SITE_METADATA.headerTitle}>
-              {/* <h2 className="text-2xl">Mushfiqur's BLOG</h2> */}
               <SiteTitle />
             </Link>
           </div>
-          <div className="flex items-center gap-4">
+          <div className="flex shrink-0 items-center gap-2 sm:gap-4">
             <div className="hidden gap-1.5 sm:flex">
               {HEADER_NAV_LINKS.map(({ title, href }) => {
                 let isActive = pathname === href || pathname.startsWith(href)
@@ -66,7 +116,7 @@ export function Header() {
               role="separator"
               className="hidden h-4 w-px shrink-0 bg-gray-200 dark:bg-gray-600 md:block"
             />
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-1.5 sm:gap-2">
               <MatrixSettings />
               <ThemeSwitcher />
               <KbarSearchTrigger />
@@ -75,6 +125,15 @@ export function Header() {
           </div>
         </div>
       </div>
+      {/* Bottom glowing ambient accent line */}
+      <div
+        className={clsx(
+          'pointer-events-none absolute inset-x-0 bottom-0 h-[1.5px] transition-all duration-500',
+          isHeaderActive
+            ? 'opacity-100 bg-gradient-to-r from-transparent via-spotify/25 to-transparent'
+            : 'opacity-0 bg-gradient-to-r from-transparent via-gray-400/10 dark:via-gray-600/10 to-transparent'
+        )}
+      />
     </HeaderContainer>
   )
 }
