@@ -9,7 +9,6 @@ export function Footer() {
   const pathname = usePathname()
   const [isScrolling, setIsScrolling] = useState(false)
   const [isHovered, setIsHovered] = useState(false)
-  const [isScrolled, setIsScrolled] = useState(false)
   const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null)
 
   useEffect(() => {
@@ -17,9 +16,8 @@ export function Footer() {
 
     const handleScroll = () => {
       const currentScrollY = window.scrollY
-      setIsScrolled(currentScrollY > 8)
 
-      if (Math.abs(currentScrollY - lastScrollY) > 2) {
+      if (Math.abs(currentScrollY - lastScrollY) >= 1) {
         setIsScrolling(true)
         lastScrollY = currentScrollY
 
@@ -29,11 +27,9 @@ export function Footer() {
 
         scrollTimeoutRef.current = setTimeout(() => {
           setIsScrolling(false)
-        }, 1200)
+        }, 1000)
       }
     }
-
-    handleScroll()
 
     window.addEventListener('scroll', handleScroll, { passive: true, capture: true })
     document.addEventListener('scroll', handleScroll, { passive: true })
@@ -52,8 +48,7 @@ export function Footer() {
     return null
   }
 
-  const isAmbientActive = isScrolled || isHovered || isScrolling
-  const isDirectActive = isHovered || isScrolling
+  const isAmbientActive = isHovered || isScrolling
 
   return (
     <footer
