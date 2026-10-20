@@ -97,7 +97,9 @@ export function Header() {
           <div className="flex shrink-0 items-center gap-2 sm:gap-4">
             <div className="hidden gap-1.5 sm:flex">
               {HEADER_NAV_LINKS.map(({ title, href }) => {
-                let isActive = pathname === href || pathname.startsWith(href)
+                let isActive =
+                  href.startsWith('/') &&
+                  (pathname === href || (href !== '/' && pathname.startsWith(href)))
                 return (
                   <Link key={title} href={href} className="px-3 py-1 font-medium">
                     <GrowingUnderline className={clsx(isActive && 'link--metis-hover')}>
