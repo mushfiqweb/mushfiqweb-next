@@ -1,10 +1,7 @@
-import { Linkedin, Mail } from 'lucide-react';
 import type { ReactNode } from 'react';
-import { TbBrandGithub } from 'react-icons/tb';
 import { Container } from '~/components/ui/container';
 import { Image } from '~/components/ui/image';
 import { PageHeader } from '~/components/ui/page-header';
-import X from '~/icons/x.svg';
 import type { Author } from '~/types/blog';
 
 interface Props {
@@ -44,52 +41,7 @@ export function AuthorLayout({ children, content }: Props) {
             {company && (
               <div className="font-medium text-gray-500 dark:text-gray-400"></div>
             )}
-          </div>
-          {/* Social links */}
-          <div className="flex select-none items-center space-x-4 pt-4">
-            {email && (
-              <a
-                href={`mailto:${email}`}
-                className="text-gray-400 transition-colors duration-200 hover:text-zinc-800 dark:hover:text-white"
-                title="Email"
-              >
-                <Mail size={22} strokeWidth={1.5} />
-              </a>
-            )}
-            {github && (
-              <a
-                href={github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 transition-colors duration-200 hover:text-zinc-800 dark:hover:text-white"
-                title="GitHub"
-              >
-                <TbBrandGithub fontSize={23} />
-              </a>
-            )}
-            {twitter && (
-              <a
-                href={twitter}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 transition-colors duration-200 hover:text-zinc-800 dark:hover:text-white"
-                title="X"
-              >
-                <X className="h-5 w-5" fill="currentColor" viewBox="0 0 1200 1227" />
-              </a>
-            )}
-            {linkedin && (
-              <a
-                href={linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 transition-colors duration-200 hover:text-zinc-800 dark:hover:text-white"
-                title="LinkedIn"
-              >
-                <Linkedin size={22} strokeWidth={1.5} />
-              </a>
-            )}
-          </div>
+          </div>          
         </div>
 
         {/* Right column: Biography Content */}

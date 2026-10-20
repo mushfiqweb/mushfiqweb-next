@@ -5,7 +5,7 @@ import type { ReactNode } from 'react'
 export interface HeroLinkProps {
   href: string
   children: ReactNode
-  variant?: 'linkedin' | 'agt' | 'indigo' | 'emerald'
+  variant?: 'linkedin' | 'agt' | 'kms' | 'indigo' | 'emerald'
   delay?: string
   className?: string
 }
@@ -18,6 +18,7 @@ export function HeroLink({
   className,
 }: HeroLinkProps) {
   const isLinkedIn = variant === 'linkedin' || variant === 'indigo'
+  const isKms = variant === 'kms' || variant === 'emerald'
 
   return (
     <span
@@ -29,7 +30,7 @@ export function HeroLink({
         target="_blank"
         rel="noopener noreferrer"
         className={clsx(
-          'group relative inline-flex items-center gap-0.5 align-baseline',
+          'group relative inline-flex items-center gap-0.5 align-baseline no-underline hover:no-underline',
           'px-1.5 py-0 mx-0.5 rounded font-semibold text-[0.95em]',
           'transition-all duration-200 ease-out cursor-pointer overflow-hidden',
           'hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98]',
@@ -40,6 +41,13 @@ export function HeroLink({
                 'bg-[#0077B5]/10 hover:bg-[#0077B5]/15 dark:bg-[#0077B5]/20 dark:hover:bg-[#0077B5]/30',
                 'hover:shadow-[0_2px_10px_rgba(0,119,181,0.22)] dark:hover:shadow-[0_2px_12px_rgba(56,189,248,0.25)]',
                 'focus-visible:ring-[#0077B5]'
+              )
+            : isKms
+            ? clsx(
+                'text-[#059669] dark:text-[#0ace8e]',
+                'bg-[#0ace8e]/10 hover:bg-[#0ace8e]/15 dark:bg-[#0ace8e]/20 dark:hover:bg-[#0ace8e]/30',
+                'hover:shadow-[0_2px_10px_rgba(10,206,142,0.22)] dark:hover:shadow-[0_2px_12px_rgba(10,206,142,0.25)]',
+                'focus-visible:ring-[#0ace8e]'
               )
             : clsx(
                 'text-[#0987A3] dark:text-[#53C1DE]',
@@ -63,7 +71,7 @@ export function HeroLink({
           aria-hidden="true"
           className={clsx(
             'pointer-events-none absolute inset-0 rounded animate-hero-glow',
-            isLinkedIn ? 'hero-glow-linkedin' : 'hero-glow-agt'
+            isLinkedIn ? 'hero-glow-linkedin' : isKms ? 'hero-glow-kms' : 'hero-glow-agt'
           )}
         />
 
@@ -88,6 +96,8 @@ export function HeroLink({
             'origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-250 ease-out',
             isLinkedIn
               ? 'bg-[#0077B5] dark:bg-[#38bdf8]'
+              : isKms
+              ? 'bg-gradient-to-r from-[#059669] to-[#0ace8e]'
               : 'bg-gradient-to-r from-[#0987A3] to-[#53C1DE]'
           )}
         />

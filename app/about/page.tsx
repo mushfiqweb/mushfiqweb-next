@@ -2,6 +2,7 @@ import { genPageMetadata } from 'app/seo';
 import { Twemoji } from '~/components/ui/twemoji';
 import { allAuthors } from '~/data/author-registry';
 import { AuthorLayout } from '~/layouts/author-layout';
+import { HeroLink } from '~/components/home-page/hero-link';
 
 export let metadata = genPageMetadata({
   title: 'About',
@@ -18,10 +19,22 @@ export default function AboutPage() {
         Hi <Twemoji emoji="waving-hand" /> I'm Mushfiqur Rahman Shishir
       </h2>
       <p>
-        While playing the role of CTO at{' '}
-        <a href="https://allgentech.io/" target="_blank" rel="noopener noreferrer">
+        While playing the role of{' '}
+        <HeroLink
+          href="https://www.linkedin.com/in/mushfiqweb/"
+          variant="linkedin"
+          delay="200ms"
+        >
+          CTO
+        </HeroLink>{' '}
+        at{' '}
+        <HeroLink
+          href="https://allgentech.io/"
+          variant="agt"
+          delay="450ms"
+        >
           AGT Software Partners
-        </a>
+        </HeroLink>
         , I have been actively involved in full-stack development, bringing over 15 years of
         experience in delivering impactful solutions across diverse industries.
       </p>
@@ -29,22 +42,41 @@ export default function AboutPage() {
       <h3>Current Roles &amp; Leadership</h3>
       <ul>
         <li>
-          <strong>CTO</strong> at{' '}
-          <a href="https://allgentech.io/" target="_blank" rel="noopener noreferrer">
+          <HeroLink
+            href="https://www.linkedin.com/in/mushfiqweb/"
+            variant="linkedin"
+            delay="200ms"
+          >
+            CTO
+          </HeroLink>{' '}
+          at{' '}
+          <HeroLink
+            href="https://allgentech.io/"
+            variant="agt"
+            delay="350ms"
+          >
             AGT Software Partners
-          </a>
+          </HeroLink>
         </li>
         <li>
           <strong>Co-Founder</strong> at{' '}
-          <a href="https://kmstech.co" target="_blank" rel="noopener noreferrer">
+          <HeroLink
+            href="https://kmsmarketplace.com/"
+            variant="kms"
+            delay="500ms"
+          >
             KMS Marketplace
-          </a>
+          </HeroLink>
         </li>
         <li>
           <strong>Co-Founder</strong> at{' '}
-          <a href="https://kmstech.co" target="_blank" rel="noopener noreferrer">
+          <HeroLink
+            href="https://kmstech.co"
+            variant="kms"
+            delay="650ms"
+          >
             KMS Tech
-          </a>
+          </HeroLink>
         </li>
       </ul>
 
