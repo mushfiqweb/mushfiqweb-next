@@ -1,11 +1,11 @@
-import type { Author } from '~/types/blog'
-import type { ReactNode } from 'react'
-import { Container } from '~/components/ui/container'
-import { Image } from '~/components/ui/image'
-import { PageHeader } from '~/components/ui/page-header'
-import { Mail, Linkedin } from 'lucide-react'
-import { TbBrandGithub } from 'react-icons/tb'
-import X from '~/icons/x.svg'
+import { Linkedin, Mail } from 'lucide-react';
+import type { ReactNode } from 'react';
+import { TbBrandGithub } from 'react-icons/tb';
+import { Container } from '~/components/ui/container';
+import { Image } from '~/components/ui/image';
+import { PageHeader } from '~/components/ui/page-header';
+import X from '~/icons/x.svg';
+import type { Author } from '~/types/blog';
 
 interface Props {
   children?: ReactNode
@@ -42,7 +42,7 @@ export function AuthorLayout({ children, content }: Props) {
             </h2>
             <div className="text-gray-500 dark:text-gray-400">{occupation}</div>
             {company && (
-              <div className="font-medium text-gray-500 dark:text-gray-400">{company}</div>
+              <div className="font-medium text-gray-500 dark:text-gray-400"></div>
             )}
           </div>
           {/* Social links */}
