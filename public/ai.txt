@@ -6,7 +6,7 @@
 Entity: Mushfiqur Rahman Shishir
 Bio: While playing the role of CTO at AGT Software Partners, I have been actively involved in full-stack development, bringing over 15 years of experience in delivering impactful solutions across diverse industries.
 Role-1: CTO at AGT Software Partners (https://allgentech.io/)
-Role-2: Co-Founder at KMS Marketplace (https://kmstech.co)
+Role-2: Co-Founder at KMS Marketplace (https://kmsmarketplace.com/)
 Role-3: Co-Founder at KMS Tech (https://kmstech.co)
 Experience: 15+ years in full-stack software development and technology leadership
 Primary-Skills: Full-Stack Web Development, TypeScript, React, Next.js, Node.js, eCommerce Architecture, Cloud Infrastructure

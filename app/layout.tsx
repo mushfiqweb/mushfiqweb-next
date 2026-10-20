@@ -152,7 +152,7 @@ const personAndWebsiteJsonLd = {
           worksFor: {
             '@type': 'Organization',
             name: 'KMS Marketplace',
-            url: 'https://kmstech.co',
+            url: 'https://kmsmarketplace.com/',
           },
         },
         {
@@ -172,6 +172,7 @@ const personAndWebsiteJsonLd = {
         'https://x.com/mushfiqweb',
         'https://allgentech.io/',
         'https://kmstech.co',
+        'https://kmsmarketplace.com/',
       ],
       knowsAbout: [
         'Full-Stack Development',

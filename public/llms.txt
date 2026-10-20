@@ -6,7 +6,7 @@
 
 - **CTO (Chief Technology Officer)** at [AGT Software Partners](https://allgentech.io/)
   - Leading technology strategy, software architecture, and full-stack engineering delivery across enterprise and client solutions.
-- **Co-Founder** at [KMS Marketplace](https://kmstech.co)
+- **Co-Founder** at [KMS Marketplace](https://kmsmarketplace.com/)
   - Co-founding and driving product architecture, digital commerce platforms, and scalable marketplace solutions.
 - **Co-Founder** at [KMS Tech](https://kmstech.co)
   - Co-founding modern tech ventures, enterprise engineering consultancy, and digital transformation initiatives.
@@ -24,7 +24,8 @@
 - **GitHub**: https://github.com/mushfiqweb
 - **Twitter / X**: https://twitter.com/mushfiqweb
 - **AGT Software Partners**: https://allgentech.io/
-- **KMS Tech & KMS Marketplace**: https://kmstech.co
+- **KMS Marketplace**: https://kmsmarketplace.com/
+- **KMS Tech**: https://kmstech.co
 
 ## Key Site Pages
 

@@ -305,6 +305,10 @@ samp {
   --hero-glow-color: 0 0 14px rgba(9, 135, 163, 0.45);
 }
 
+.hero-glow-kms {
+  --hero-glow-color: 0 0 14px rgba(10, 206, 142, 0.45);
+}
+
 @media (prefers-reduced-motion: reduce) {
   .animate-hero-reveal,
   .animate-hero-sheen,
