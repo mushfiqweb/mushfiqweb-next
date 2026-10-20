@@ -18,6 +18,9 @@ export type Project = {
   repo?: string | GithubRepository | null
   builtWith: string[]
   links?: { title: string; url: string }[]
+  role?: string
+  category?: string
+  badgeVariant?: 'kms' | 'agt' | 'gold' | 'default'
 }
 
 export type GoodreadsBook = {

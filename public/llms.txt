@@ -10,6 +10,35 @@
   - Co-founding and driving product architecture, digital commerce platforms, and scalable marketplace solutions.
 - **Co-Founder** at [KMS Tech](https://kmstech.co)
   - Co-founding modern tech ventures, enterprise engineering consultancy, and digital transformation initiatives.
+- **Lead Architect** at [Jobayar Abir Peal (mrpeal)](https://www.mrpeal.com/)
+  - Directing technical architecture and high-end digital portfolio engineering for award-winning JAP Studios.
+
+## Featured Projects & Ventures
+
+1. **[KMS Marketplace](https://kmsmarketplace.com/)**
+   - **Role**: Co-Founder • **Category**: E-Commerce
+   - **Description**: An ethical e-commerce marketplace platform rooted in spiritual legacy and social responsibility, curating premium lifestyle and wellness products with seamless checkout.
+   - **Tech Stack**: Shopify, Liquid, JavaScript, TailwindCSS
+
+2. **[KMS Tech](https://kmstech.co)**
+   - **Role**: Co-Founder • **Category**: Digital Innovation
+   - **Description**: Technology innovation company building modern web infrastructure, digital tools, and scalable platforms with sacred intention and uncompromising engineering craft.
+   - **Tech Stack**: Next.js, React, TypeScript, TailwindCSS
+
+3. **[Jobayar Abir Peal (mrpeal • JAP Studios)](https://www.mrpeal.com/)**
+   - **Role**: Lead Architect • **Category**: Cinematic Portfolio
+   - **Description**: Official portfolio and cinematic showcase for award-nominated Film Director & Lead Editor Jobayar Abir Peal (Chief Editor behind blockbuster films Toofan, Surongo, and Mohanagar 2).
+   - **Tech Stack**: Next.js, React, TypeScript, TailwindCSS
+
+4. **[AGT Software Partners](https://allgentech.io/)**
+   - **Role**: CTO • **Category**: Enterprise Solutions
+   - **Description**: Global enterprise technology partner delivering scalable full-stack applications, AI/ML integrations, and dedicated engineering teams to US venture-backed and high-growth companies.
+   - **Tech Stack**: Next.js, React, TypeScript, TailwindCSS, Node.js
+
+5. **[mushfiqweb.com](https://www.mushfiqweb.com)**
+   - **Role**: Creator • **Category**: Open Source
+   - **Description**: Personal digital garden, technical blog, and developer portfolio crafted with Next.js App Router, Tailwind CSS, Contentlayer, and interactive micro-animations.
+   - **Tech Stack**: Next.js, TailwindCSS, TypeScript, Drizzle, Umami
 
 ## Core Expertise & Background
 
@@ -30,6 +59,6 @@
 ## Key Site Pages
 
 - [About Mushfiqur](https://www.mushfiqweb.com/about): Complete biography, career journey, leadership roles, and technical philosophy.
+- [Projects](https://www.mushfiqweb.com/projects): Featured engineering projects, production architectures, and ventures.
 - [Blog Posts](https://www.mushfiqweb.com/blog): In-depth articles covering React, Next.js, Node.js, AI agents, architecture, and web engineering.
 - [Code Snippets](https://www.mushfiqweb.com/snippets): Practical, reusable code snippets for developers.
-- [Projects](https://www.mushfiqweb.com/projects): Featured engineering projects and open-source contributions.
