@@ -4,8 +4,9 @@ import { fetcher } from '~/utils/misc'
 
 export function useNowPlaying() {
   let { data } = useSWR<SpotifyNowPlayingData>('/api/spotify', fetcher, {
-    refreshInterval: 5000,
+    refreshInterval: 60000,
     revalidateOnFocus: true,
+    revalidateOnMount: true,
   })
   return data || { isPlaying: false }
 }

@@ -1,48 +1,103 @@
-import { genPageMetadata } from 'app/seo'
-import { ProjectCard } from '~/components/cards/project'
-import { Container } from '~/components/ui/container'
-import { PageHeader } from '~/components/ui/page-header'
-import { PROJECTS } from '~/data/projects'
-import { fetchRepoData } from '~/utils/github'
+import { genPageMetadata } from 'app/seo';
+import type { Metadata } from 'next';
+import { ProjectCard } from '~/components/cards/project';
+import { Container } from '~/components/ui/container';
+import { PageHeader } from '~/components/ui/page-header';
+import { PROJECTS } from '~/data/projects';
+import { SITE_METADATA } from '~/data/site-metadata';
+import { fetchRepoData } from '~/utils/github';
 
-export let metadata = genPageMetadata({ title: 'Projects' })
+export let metadata: Metadata = genPageMetadata({
+  title: 'Projects',
+  description:
+    'Explore production platforms, enterprise software architectures, and digital ventures built and co-founded by Mushfiqur Rahman Shishir, including KMS Marketplace, KMS Tech, AGT Software Partners, and JAP Studios.',
+  keywords: [
+    'Mushfiqur Rahman Shishir Projects',
+    'KMS Marketplace',
+    'KMS Tech',
+    'AGT Software Partners',
+    'mrpeal',
+    'JAP Studios',
+    'Enterprise Software Architecture',
+    'eCommerce Platforms',
+    'Next.js Projects',
+    'Shopify Development',
+    'React',
+    'TypeScript',
+    'Full Stack Portfolio',
+  ],
+  alternates: {
+    canonical: `${SITE_METADATA.siteUrl}/projects`,
+  },
+})
 
 export const dynamic = 'force-dynamic'
 
 export default async function Projects() {
   await Promise.all(
     PROJECTS.map(async (p) => {
-      if (p.repo) {
-        p.repo = await fetchRepoData({ repo: p.repo as string })
+      if (p.repo && typeof p.repo === 'string') {
+        p.repo = await fetchRepoData({ repo: p.repo })
       }
     })
   )
-  let workProjects = PROJECTS.filter(({ type }) => type === 'work')
-  let sideProjects = PROJECTS.filter(({ type }) => type === 'self')
+
+  const projectsJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: "Mushfiqur Rahman's Featured Projects & Ventures",
+    description:
+      'Curated showcase of production platforms, enterprise software architectures, and digital ventures built and co-founded by Mushfiqur Rahman Shishir.',
+    url: `${SITE_METADATA.siteUrl}/projects`,
+    numberOfItems: PROJECTS.length,
+    itemListElement: PROJECTS.map((project, index) => {
+      let href = (project.repo as any)?.url || project.url || `${SITE_METADATA.siteUrl}/projects`
+      let imageUrl = project.imgSrc.startsWith('http')
+        ? project.imgSrc
+        : `${SITE_METADATA.siteUrl}${project.imgSrc}`
+
+      return {
+        '@type': 'ListItem',
+        position: index + 1,
+        item: {
+          '@type': 'SoftwareApplication',
+          name: project.title,
+          description: project.description,
+          url: href,
+          image: imageUrl,
+          applicationCategory: project.category || 'BusinessApplication',
+          operatingSystem: 'Web',
+          author: {
+            '@type': 'Person',
+            name: 'Mushfiqur Rahman Shishir',
+            url: SITE_METADATA.siteUrl,
+            jobTitle: project.role,
+          },
+          offers: {
+            '@type': 'Offer',
+            price: '0',
+            priceCurrency: 'USD',
+          },
+          keywords: project.builtWith.join(', '),
+        },
+      }
+    }),
+  }
 
   return (
-    <Container className="pt-4 lg:pt-12">
+    <Container className="pt-4 lg:pt-12 pb-16">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(projectsJsonLd) }}
+      />
       <PageHeader
         title="Projects"
-        description="Collections of my open-source side projects, along with some cool things I’ve built with colleagues at work. It’s a mix of passion projects and practical tools—some just for fun, others to solve real-world problems."
-        className="border-b border-gray-200 dark:border-gray-700"
+        className="border-b-0 pb-2"
+        description="The Projects I am invloved right now, as of 2026"
       />
-      <div className="py-5 md:py-10">
-        <h2 className="mb-6 text-2xl font-bold leading-9 tracking-tight text-gray-900 dark:text-gray-100 md:text-3xl">
-          Work
-        </h2>
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
-          {workProjects.map((pro) => (
-            <ProjectCard key={pro.title} project={pro} />
-          ))}
-        </div>
-      </div>
-      <div className="mt-6 border-t border-gray-200 py-5 dark:border-gray-700 md:mt-10 md:py-10">
-        <h2 className="mb-6 text-2xl font-bold leading-9 tracking-tight text-gray-900 dark:text-gray-100 md:mb-8 md:text-3xl">
-          Side projects
-        </h2>
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
-          {sideProjects.map((pro) => (
+      <div className="pt-4">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:gap-10">
+          {PROJECTS.map((pro) => (
             <ProjectCard key={pro.title} project={pro} />
           ))}
         </div>

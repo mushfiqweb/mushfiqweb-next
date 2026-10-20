@@ -8,8 +8,15 @@ Bio: While playing the role of CTO at AGT Software Partners, I have been activel
 Role-1: CTO at AGT Software Partners (https://allgentech.io/)
 Role-2: Co-Founder at KMS Marketplace (https://kmsmarketplace.com/)
 Role-3: Co-Founder at KMS Tech (https://kmstech.co)
+Role-4: Lead Architect at mrpeal • JAP Studios (https://www.mrpeal.com/)
 Experience: 15+ years in full-stack software development and technology leadership
 Primary-Skills: Full-Stack Web Development, TypeScript, React, Next.js, Node.js, eCommerce Architecture, Cloud Infrastructure
+Projects:
+- KMS Marketplace: https://kmsmarketplace.com/ (Co-Founder, E-Commerce, Shopify, Liquid, TailwindCSS)
+- KMS Tech: https://kmstech.co (Co-Founder, Digital Innovation, Next.js, React, TypeScript, TailwindCSS)
+- Jobayar Abir Peal (mrpeal): https://www.mrpeal.com/ (Lead Architect, Cinematic Portfolio, Next.js, React, TypeScript)
+- AGT Software Partners: https://allgentech.io/ (CTO, Enterprise Solutions, Next.js, React, TypeScript, Node.js)
+- mushfiqweb.com: https://www.mushfiqweb.com (Creator, Open Source, Next.js, TailwindCSS, TypeScript)
 LinkedIn: https://www.linkedin.com/in/mushfiqweb
 GitHub: https://github.com/mushfiqweb
 Website: https://www.mushfiqweb.com
